@@ -1,3 +1,5 @@
 .cask/
 .DS_Store
+*~
 auto-save-list
+smex-items

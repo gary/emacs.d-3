@@ -10,5 +10,10 @@
     (setq mac-command-modifier 'meta
           mac-option-modifier 'alt))
 
+(global-set-key (kbd "M-`") 'other-frame)
+
 (exec-path-from-shell-initialize)
 (set-font-for-host)
+
+(require 'my-functions)
+(require 'my-global-bindings)
