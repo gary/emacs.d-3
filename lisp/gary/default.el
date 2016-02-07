@@ -15,6 +15,7 @@
 (exec-path-from-shell-initialize)
 (set-font-for-host)
 
+(require 'my-appearance)
 (require 'my-file-management)
 (require 'my-functions)
 (require 'my-global-bindings)
