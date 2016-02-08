@@ -22,5 +22,6 @@
 (require 'my-file-management)
 (require 'my-functions)
 (require 'my-global-bindings)
+(require 'my-ido)
 (require 'my-key-chords)
 (require 'my-misc)

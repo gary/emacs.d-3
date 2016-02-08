@@ -9,6 +9,7 @@
 (depends-on "exec-path-from-shell")
 (depends-on "feature-mode")
 (depends-on "httpcode")
+(depends-on "ido-ubiquitous")
 (depends-on "imgur")
 (depends-on "inf-ruby")
 (depends-on "js2-mode")
