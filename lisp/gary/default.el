@@ -10,9 +10,12 @@
     (setq mac-command-modifier 'meta
           mac-option-modifier 'alt))
 
+(exec-path-from-shell-initialize)
+
 (global-set-key (kbd "M-`") 'other-frame)
 
-(exec-path-from-shell-initialize)
+(setq browse-url-browser-function 'browse-url-default-macosx-browser)
+
 (set-font-for-host)
 
 (require 'my-appearance)
@@ -20,3 +23,4 @@
 (require 'my-functions)
 (require 'my-global-bindings)
 (require 'my-key-chords)
+(require 'my-misc)
