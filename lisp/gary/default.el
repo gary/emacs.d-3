@@ -18,3 +18,4 @@
 (require 'my-file-management)
 (require 'my-functions)
 (require 'my-global-bindings)
+(require 'my-key-chords)
