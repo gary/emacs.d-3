@@ -25,3 +25,5 @@
 (require 'my-ido)
 (require 'my-key-chords)
 (require 'my-misc)
+(require 'my-mode-mappings)
+(require 'my-ruby)
