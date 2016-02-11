@@ -18,6 +18,7 @@
 
 (set-font-for-host)
 
+(require 'my-aliases)
 (require 'my-appearance)
 (require 'my-file-management)
 (require 'my-functions)
