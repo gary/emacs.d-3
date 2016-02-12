@@ -25,10 +25,10 @@
 (define-key (current-global-map) [remap query-replace] 'query-replace-regexp)
 (define-key (current-global-map) [remap query-replace-regexp]
   'query-replace)
-(define-key (current-global-map) [remap yank-pop] 'browse-kill-ring)
 
 (global-set-key   (kbd "C-x \\")        'align-regexp)
 (global-set-key   (kbd "C-w")           'backward-kill-word)
+(global-set-key   (kbd "M-y")           'browse-kill-ring)
 (global-set-key   (kbd "C-c C-u")       'browse-url-at-point)
 (global-set-key   (kbd "<C-tab>")       'bury-buffer)
 (global-set-key   (kbd "C-c j")         'delete-indentation)
@@ -42,7 +42,8 @@
 (global-set-key   (kbd "C-<f10>")       'menu-bar-mode)
 (global-set-key   (kbd "C-c r")         'revert-buffer)
 (global-set-key   (kbd "<C-return>")    'set-mark-command)
-(global-set-key   (kbd "C-c t")         'shell)
+(global-set-key   (kbd "C-c t")         'get-term)
+(global-set-key   (kbd "C-c T")         'multi-term-dedicated-toggle)
 (global-set-key   (kbd "C-+")           'text-scale-decrease)
 (global-set-key   (kbd "C-=")           'text-scale-increase)
 (global-set-key   (kbd "C-c ^")         'top-level)

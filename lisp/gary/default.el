@@ -29,3 +29,4 @@
 (require 'my-misc)
 (require 'my-mode-mappings)
 (require 'my-ruby)
+(require 'my-term)
