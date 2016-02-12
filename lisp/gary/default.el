@@ -20,6 +20,7 @@
 
 (require 'my-aliases)
 (require 'my-appearance)
+(require 'my-custom)
 (require 'my-file-management)
 (require 'my-functions)
 (require 'my-global-bindings)

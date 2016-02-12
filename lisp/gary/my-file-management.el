@@ -24,7 +24,7 @@
         auto-save-list-file-prefix   emacs-tmp-dir
         backup-directory-alist       `(("." . ,emacs-tmp-dir))
         bookmark-default-file        (f-join var-directory "emacs.bmk")
-        custom-file                  (f-join var-directory "custom.el")
+        custom-file                  my-custom-file
         emacs-download-dir           (f-join var-directory "downloads/")
         ido-save-directory-list-file (f-join var-directory "ido.last")
         ispell-personal-dictionary   (f-join var-directory "ispell_english")
