@@ -28,5 +28,6 @@
 (require 'my-key-chords)
 (require 'my-misc)
 (require 'my-mode-mappings)
+(require 'my-registers)
 (require 'my-ruby)
 (require 'my-term)
