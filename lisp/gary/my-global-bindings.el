@@ -62,6 +62,9 @@
 (global-set-key   (kbd "<f6>")          '(lambda () ; increase
                                            (interactive)
                                            (opacity-modify)))
+
 (global-unset-key (kbd "C-x C-d")) ; too close to dired
+(global-unset-key (kbd "C-x C-z"))
+(global-unset-key (kbd "C-z"))
 
 (provide 'my-global-bindings)
