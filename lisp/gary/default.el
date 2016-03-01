@@ -14,7 +14,8 @@
 
 (global-set-key (kbd "M-`") 'other-frame)
 
-(setq browse-url-browser-function 'browse-url-default-macosx-browser)
+(setq browse-url-browser-function 'browse-url-default-macosx-browser
+      ring-bell-function          'ignore)
 
 (set-font-for-host)
 

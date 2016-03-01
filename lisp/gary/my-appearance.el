@@ -22,7 +22,6 @@
       inhibit-startup-message t
       initial-scratch-message nil
       split-height-threshold nil ; prefer vertically split window layout
-      visible-bell nil
       whitespace-style '(face
                          tabs
                          spaces
