@@ -5,16 +5,13 @@
         ns-pop-up-frames nil)
   (ns-respond-to-change-font))
 
-;; command is alt in osx
-(if (eq system-type 'darwin)
-    (setq mac-command-modifier 'meta
-          mac-option-modifier 'alt))
-
 (exec-path-from-shell-initialize)
 
 (global-set-key (kbd "M-`") 'other-frame)
 
 (setq browse-url-browser-function 'browse-url-default-macosx-browser
+      mac-command-modifier        'meta ; command is alt in osx
+      mac-option-modifier         'alt
       ring-bell-function          'ignore)
 
 (set-font-for-host)
