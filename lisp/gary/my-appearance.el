@@ -35,6 +35,4 @@
                          space-after-tab
                          tab-mark))
 
-(global-whitespace-mode) ; make unkempt whitespace painfully annoying
-
 (provide 'my-appearance)

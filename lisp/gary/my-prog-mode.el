@@ -12,5 +12,6 @@
 (add-hook 'prog-mode-hook #'turn-on-prettify-symbols-mode)
 (add-hook 'prog-mode-hook #'turn-on-save-place-mode)
 (add-hook 'prog-mode-hook #'turn-on-visual-line-mode)
+(add-hook 'prog-mode-hook #'whitespace-mode)
 
 (provide 'my-prog-mode)
