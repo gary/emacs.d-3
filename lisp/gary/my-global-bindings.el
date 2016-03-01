@@ -10,6 +10,8 @@
 
 (define-key 'help-command "a" 'apropos)
 
+(define-key (current-global-map) [remap async-shell-command]
+  'with-editor-async-shell-command)
 (define-key (current-global-map) [remap find-file-other-window]
   'ido-find-file-other-window)
 (define-key (current-global-map) [remap isearch-backward-regexp]
@@ -25,6 +27,8 @@
 (define-key (current-global-map) [remap query-replace] 'query-replace-regexp)
 (define-key (current-global-map) [remap query-replace-regexp]
   'query-replace)
+(define-key (current-global-map) [remap shell-command]
+  'with-editor-shell-command)
 
 (global-set-key   (kbd "C-x \\")        'align-regexp)
 (global-set-key   (kbd "C-w")           'backward-kill-word)
