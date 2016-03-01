@@ -8,6 +8,7 @@
 
 (add-hook 'prog-mode-hook #'column-number-mode)
 (add-hook 'prog-mode-hook #'electric-pair-mode)
+(add-hook 'prog-mode-hook #'flycheck-mode)
 (add-hook 'prog-mode-hook #'turn-on-hl-line-mode)
 (add-hook 'prog-mode-hook #'turn-on-prettify-symbols-mode)
 (add-hook 'prog-mode-hook #'turn-on-save-place-mode)

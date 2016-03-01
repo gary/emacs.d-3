@@ -1,3 +1,4 @@
+(source gnu)
 (source marmalade)
 (source melpa)
 
@@ -8,6 +9,7 @@
 (depends-on "enh-ruby-mode")
 (depends-on "exec-path-from-shell")
 (depends-on "feature-mode")
+(depends-on "flycheck")
 (depends-on "httpcode")
 (depends-on "ido-ubiquitous")
 (depends-on "imgur")
