@@ -7,7 +7,11 @@
 
 (ad-activate 'rspec-compile)
 
+(defconst ruby--prettify-symbols-alist
+  '(("lambda"  . ?λ) ("->" . ?λ)))
+
 (setq enh-ruby-program rbenv-ruby-shim)
+(setq-local prettify-symbols-alist ruby--prettify-symbols-alist)
 
 (add-hook 'enh-ruby-mode-hook #'rspec-mode)
 (add-hook 'enh-ruby-mode-hook #'rubocop-mode)
