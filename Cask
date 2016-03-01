@@ -29,4 +29,5 @@
 (depends-on "wgrep-ack")
 (depends-on "xkcd")
 (depends-on "yagist")
+(depends-on "yard-mode")
 (depends-on "yasnippet")

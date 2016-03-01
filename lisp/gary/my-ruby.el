@@ -11,6 +11,7 @@
 
 (add-hook 'enh-ruby-mode-hook #'rspec-mode)
 (add-hook 'enh-ruby-mode-hook #'rubocop-mode)
+(add-hook 'enh-ruby-mode-hook #'yard-mode)
 
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
