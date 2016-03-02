@@ -14,6 +14,7 @@
       ffap-require-prefix t
       minibuffer-max-depth nil
       mouse-yank-at-point t
+      save-abbrevs 'silently
       shift-select-mode nil
       uniquify-buffer-name-style 'forward
       uniquify-after-kill-buffer-p t
@@ -22,6 +23,8 @@
       uniquify-separator "|"
       yank-pop-change-selection t
       )
+
+(setq-default abbrev-mode t)
 
 (delete-selection-mode t) ; replace selection by typing
 (icomplete-mode 1)        ; incremental minibuffer completion

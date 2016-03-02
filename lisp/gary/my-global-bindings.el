@@ -2,6 +2,8 @@
 
 (global-set-key (kbd "C-c a")   'ack-and-a-half)
 (global-set-key (kbd "C-c l")   'dictionary-lookup-definition)
+(global-set-key (kbd "M-x") #'endless/ispell-word-then-abbrev)
+(global-set-key (kbd "M-^") #'endless/ispell-word-then-abbrev)
 (global-set-key (kbd "C-c g")   'magit-status)
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "C-c C-m") 'smex-major-mode-commands)
@@ -42,8 +44,6 @@
 (global-set-key   (kbd "C-c j")         'delete-indentation)
 (global-set-key   (kbd "<C-SPC>")       'hippie-expand)
 (global-set-key   (kbd "C-c <tab>")     'indent-relative)
-(global-set-key   (kbd "M-x")           'ispell-word)
-(global-set-key   (kbd "M-^")           'ispell-word)
 (global-set-key   (kbd "C-<f10>")       'menu-bar-mode)
 (global-set-key   (kbd "C-c r")         'revert-buffer)
 (global-set-key   (kbd "<C-return>")    'set-mark-command)
