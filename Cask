@@ -24,6 +24,7 @@
 (depends-on "markdown-mode")
 (depends-on "multi-term")
 (depends-on "pallet")
+(depends-on "paredit")
 (depends-on "projectile")
 (depends-on "rbenv")
 (depends-on "rspec-mode")
