@@ -28,6 +28,7 @@
 (require 'my-misc)
 (require 'my-mode-mappings)
 (require 'my-prog-mode)
+(require 'my-projectile)
 (require 'my-registers)
 (require 'my-ruby)
 (require 'my-term)
