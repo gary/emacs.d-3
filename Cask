@@ -10,6 +10,7 @@
 (depends-on "enh-ruby-mode")
 (depends-on "exec-path-from-shell")
 (depends-on "feature-mode")
+(depends-on "flx-ido")
 (depends-on "flycheck")
 (depends-on "httpcode")
 (depends-on "ido-ubiquitous")
