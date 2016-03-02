@@ -30,3 +30,4 @@
 (require 'my-registers)
 (require 'my-ruby)
 (require 'my-term)
+(require 'my-text-mode)
