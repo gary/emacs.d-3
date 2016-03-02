@@ -1,5 +1,7 @@
 ;; Third party functionality
 
+(define-key ctl-x-map "\C-i" #'imenu-anywhere)
+
 (global-set-key (kbd "C-c a")   'ack-and-a-half)
 (global-set-key (kbd "C-c l")   'dictionary-lookup-definition)
 (global-set-key (kbd "M-x") #'endless/ispell-word-then-abbrev)
@@ -35,7 +37,6 @@
 (define-key ctl-x-map "\\" 'align-regexp)
 (define-key ctl-x-map "\C-k" 'kill-region)
 (define-key ctl-x-map "\M-f" 'ido-find-file-other-window)
-(define-key ctl-x-map "\C-i" 'imenu)
 
 (global-set-key   (kbd "C-w")           'backward-kill-word)
 (global-set-key   (kbd "M-y")           'browse-kill-ring)

@@ -13,6 +13,7 @@
 (depends-on "flycheck")
 (depends-on "httpcode")
 (depends-on "ido-ubiquitous")
+(depends-on "imenu-anywhere")
 (depends-on "imgur")
 (depends-on "inf-ruby")
 (depends-on "js2-mode")
