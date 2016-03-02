@@ -3,6 +3,7 @@
 (source melpa)
 
 (depends-on "ack-and-a-half")
+(depends-on "aggressive-indent")
 (depends-on "browse-kill-ring")
 (depends-on "dictionary")
 (depends-on "edit-server")

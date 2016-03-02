@@ -24,6 +24,7 @@
 (require 'my-global-bindings)
 (require 'my-ido)
 (require 'my-key-chords)
+(require 'my-lisp)
 (require 'my-misc)
 (require 'my-mode-mappings)
 (require 'my-prog-mode)
