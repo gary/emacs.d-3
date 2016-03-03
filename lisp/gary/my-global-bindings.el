@@ -2,7 +2,7 @@
 
 (define-key ctl-x-map "\C-i" #'imenu-anywhere)
 
-(global-set-key (kbd "C-c a")   'ack-and-a-half)
+(global-set-key (kbd "C-c a") #'ag)
 (global-set-key (kbd "C-c l")   'dictionary-lookup-definition)
 (global-set-key (kbd "M-x") #'endless/ispell-word-then-abbrev)
 (global-set-key (kbd "M-^") #'endless/ispell-word-then-abbrev)

@@ -2,7 +2,7 @@
 (source marmalade)
 (source melpa)
 
-(depends-on "ack-and-a-half")
+(depends-on "ag")
 (depends-on "aggressive-indent")
 (depends-on "browse-kill-ring")
 (depends-on "dictionary")
@@ -35,7 +35,7 @@
 (depends-on "slime-repl")
 (depends-on "smex")
 (depends-on "solarized-theme")
-(depends-on "wgrep-ack")
+(depends-on "wgrep-ag")
 (depends-on "xkcd")
 (depends-on "yagist")
 (depends-on "yard-mode")
