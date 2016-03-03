@@ -6,6 +6,8 @@
     ad-do-it))
 
 (ad-activate 'rspec-compile)
+(eval-after-load 'rspec-mode
+  '(rspec-install-snippets))
 
 (defconst ruby--prettify-symbols-alist
   '(("lambda"  . ?λ) ("->" . ?λ)))

@@ -19,5 +19,6 @@
 (add-hook 'prog-mode-hook #'turn-on-save-place-mode)
 (add-hook 'prog-mode-hook #'turn-on-visual-line-mode)
 (add-hook 'prog-mode-hook #'whitespace-mode)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'my-prog-mode)
