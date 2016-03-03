@@ -14,8 +14,6 @@
       mac-option-modifier         'alt
       ring-bell-function          'ignore)
 
-(set-font-for-host)
-
 (require 'my-aliases)
 (require 'my-appearance)
 (require 'my-custom)

@@ -1,3 +1,10 @@
+(defun init-frame ()
+  (set-frame-size (selected-frame) 1155 1325 t)
+  (set-frame-position (selected-frame) 1370 0)
+  (set-font-for-host))
+
+(add-hook 'emacs-startup-hook 'init-frame)
+
 (setq solarized-distinct-fringe-background t
       solarized-high-contrast-mode-line t)
 (load-theme 'solarized-dark t)
