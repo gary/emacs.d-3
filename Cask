@@ -12,6 +12,8 @@
 (depends-on "feature-mode")
 (depends-on "flx-ido")
 (depends-on "flycheck")
+(depends-on "gitconfig-mode")
+(depends-on "gitignore-mode")
 (depends-on "httpcode")
 (depends-on "ido-ubiquitous")
 (depends-on "imenu-anywhere")
