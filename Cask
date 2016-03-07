@@ -38,5 +38,6 @@
 (depends-on "wgrep-ag")
 (depends-on "xkcd")
 (depends-on "yagist")
+(depends-on "yaml-mode")
 (depends-on "yard-mode")
 (depends-on "yasnippet")
