@@ -24,6 +24,7 @@
 (require 'my-key-chords)
 (require 'my-lisp)
 (require 'my-misc)
+(require 'my-minibuffer)
 (require 'my-mode-mappings)
 (require 'my-prog-mode)
 (require 'my-projectile)
