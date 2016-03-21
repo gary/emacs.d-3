@@ -16,7 +16,6 @@
 (setq-local prettify-symbols-alist ruby--prettify-symbols-alist)
 
 (add-hook 'enh-ruby-mode-hook #'aggressive-indent-mode)
-(add-hook 'enh-ruby-mode-hook #'projectile-mode)
 (add-hook 'enh-ruby-mode-hook #'rspec-mode)
 (add-hook 'enh-ruby-mode-hook #'rubocop-mode)
 (add-hook 'enh-ruby-mode-hook #'yard-mode)
