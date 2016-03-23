@@ -17,6 +17,7 @@
 (require 'my-aliases)
 (require 'my-appearance)
 (require 'my-custom)
+(require 'my-edit-server)
 (require 'my-file-management)
 (require 'my-flycheck)
 (require 'my-functions)
