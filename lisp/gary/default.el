@@ -18,6 +18,7 @@
 (require 'my-appearance)
 (require 'my-custom)
 (require 'my-file-management)
+(require 'my-flycheck)
 (require 'my-functions)
 (require 'my-global-bindings)
 (require 'my-ido)

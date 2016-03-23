@@ -1,0 +1,4 @@
+(with-eval-after-load #'flycheck
+  (flycheck-pos-tip-mode))
+
+(provide 'my-flycheck)
