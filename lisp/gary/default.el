@@ -35,5 +35,6 @@
 (require 'my-term)
 (require 'my-text-mode)
 (require 'my-utf8)
+(require 'my-web-mode)
 (require 'my-yagist)
 (require 'my-yasnippet)

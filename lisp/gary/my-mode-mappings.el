@@ -14,6 +14,8 @@
         ("\\.mkd$"         . markdown-mode)
         ("\\.mkdn$"        . markdown-mode)
         ("\\mdwn$"         . markdown-mode)
-        ("\\.zsh$"         . shell-script-mode)))
+        ("\\.zsh$"         . shell-script-mode)
+        ("\\.html?\\'"     . web-mode)
+        ("\\.erb$"         . web-mode)))
 
 (provide 'my-mode-mappings)

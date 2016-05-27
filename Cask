@@ -36,6 +36,7 @@
 (depends-on "slime-repl")
 (depends-on "smex")
 (depends-on "solarized-theme")
+(depends-on "web-mode")
 (depends-on "wgrep-ag")
 (depends-on "xkcd")
 (depends-on "yagist")
