@@ -23,7 +23,6 @@
 (require 'my-functions)
 (require 'my-global-bindings)
 (require 'my-ido)
-(require 'my-key-chords)
 (require 'my-lisp)
 (require 'my-misc)
 (require 'my-minibuffer)

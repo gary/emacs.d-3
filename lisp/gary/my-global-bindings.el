@@ -40,6 +40,7 @@
   'query-replace)
 (define-key (current-global-map) [remap shell-command]
   'with-editor-shell-command)
+(define-key (current-global-map) [remap other-window] 'switch-window)
 
 (define-key ctl-x-map "\\" 'align-regexp)
 (define-key ctl-x-map "\C-k" 'kill-region)
