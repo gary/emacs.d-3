@@ -22,4 +22,6 @@
 (add-hook 'prog-mode-hook #'yagist-global-minor-mode)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
+(define-key prog-mode-map (kbd "C-<backspace>") #'delete-pair)
+
 (provide 'my-prog-mode)
