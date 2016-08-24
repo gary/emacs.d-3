@@ -23,7 +23,7 @@
   (setq abbrev-file-name (f-join var-directory "abbrev_defs")
         auto-save-file-name-transforms `((".*" ,emacs-tmp-dir t))
         auto-save-list-file-prefix   emacs-tmp-dir
-        backup-directory-alist       `(("." . ,emacs-tmp-dir))
+        backup-directory-alist       `((".*" . ,emacs-tmp-dir))
         bookmark-default-file        (f-join var-directory "emacs.bmk")
         custom-file                  my-custom-file
         emacs-download-dir           (f-join var-directory "downloads/")
