@@ -19,7 +19,7 @@
 (add-to-list 'clean-buffer-list-kill-regexps "\\.rb$")
 
 (let ((var-directory (f-join user-emacs-directory "var"))
-      (emacs-tmp-dir (format "%s%s%s" temporary-file-directory "emacs" (user-uid))))
+      (emacs-tmp-dir (format "%s%s" temporary-file-directory "org.gnu.emacs")))
   (setq abbrev-file-name (f-join var-directory "abbrev_defs")
         auto-save-file-name-transforms `((".*" ,emacs-tmp-dir t))
         auto-save-list-file-prefix   emacs-tmp-dir
