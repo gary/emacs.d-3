@@ -24,6 +24,7 @@
 (require 'my-global-bindings)
 (require 'my-ido)
 (require 'my-lisp)
+(require 'my-magithub)
 (require 'my-misc)
 (require 'my-minibuffer)
 (require 'my-mode-mappings)
