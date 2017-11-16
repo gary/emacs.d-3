@@ -1,3 +1,5 @@
+;; -*- mode: lisp-interaction -*-
+
 (source gnu)
 (source marmalade)
 (source melpa)
@@ -48,7 +50,6 @@
 (depends-on "s")
 (depends-on "seq")
 (depends-on "slime")
-(depends-on "slime-repl")
 (depends-on "smex")
 (depends-on "solarized-theme")
 (depends-on "switch-window")
