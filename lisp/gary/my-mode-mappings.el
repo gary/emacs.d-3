@@ -1,6 +1,7 @@
 (mapc (lambda (auto-mode)
         (add-to-list 'auto-mode-alist auto-mode))
       '(("\\(\.?\\)Brewfile" . enh-ruby-mode)
+        ("Cask$"             . lisp-interaction-mode)
         (".builder$"         . enh-ruby-mode)
         ("\\.gemspec$"       . enh-ruby-mode)
         ("\\.podspec$"       . enh-ruby-mode)

@@ -1,5 +1,3 @@
-;; -*- mode: lisp-interaction -*-
-
 (source gnu)
 (source marmalade)
 (source melpa)
