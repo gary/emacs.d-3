@@ -2,6 +2,7 @@
         (add-to-list 'auto-mode-alist auto-mode))
       '(("\\(\.?\\)Brewfile" . enh-ruby-mode)
         ("Cask$"             . lisp-interaction-mode)
+        ("hosts$"            . conf-mode)
         (".builder$"         . enh-ruby-mode)
         ("\\.gemspec$"       . enh-ruby-mode)
         ("\\.podspec$"       . enh-ruby-mode)
