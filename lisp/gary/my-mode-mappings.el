@@ -7,7 +7,7 @@
         ("\\.gemspec$"       . enh-ruby-mode)
         ("\\.podspec$"       . enh-ruby-mode)
         ("\\.rake$"          . enh-ruby-mode)
-        ("\\.Rb$"            . enh-ruby-mode)
+        ("\\.rb$"            . enh-ruby-mode)
         ("\\.ru$"            . enh-ruby-mode)
         ("\\.thor$"          . enh-ruby-mode)
         ("/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\'" . enh-ruby-mode)
