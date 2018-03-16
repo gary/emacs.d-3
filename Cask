@@ -35,7 +35,7 @@
 (depends-on "macrostep")
 (depends-on "magit")
 (depends-on "magit-popup")
-(depends-on "magithub")
+;; (depends-on "magithub")
 (depends-on "markdown-mode")
 (depends-on "multi-term")
 (depends-on "package-build")
