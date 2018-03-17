@@ -19,7 +19,7 @@
       ring-bell-function          'ignore
       use-package-always-ensure   t)
 
-;; (require 'my-aliases)
+(require 'my-aliases)
 ;; (require 'my-appearance)
 ;; (require 'my-custom)
 ;; (require 'my-edit-server)
