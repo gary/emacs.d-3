@@ -11,8 +11,6 @@
         ns-pop-up-frames nil)
   (ns-respond-to-change-font))
 
-(exec-path-from-shell-initialize)
-
 (global-set-key (kbd "M-`") 'other-frame)
 
 (setq browse-url-browser-function 'browse-url-default-macosx-browser
@@ -25,6 +23,7 @@
 ;; (require 'my-appearance)
 ;; (require 'my-custom)
 ;; (require 'my-edit-server)
+(require 'my-env)
 ;; (require 'my-file-management)
 ;; (require 'my-flycheck)
 ;; (require 'my-functions)

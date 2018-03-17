@@ -13,7 +13,6 @@
 (depends-on "dictionary")
 (depends-on "edit-server")
 (depends-on "enh-ruby-mode")
-(depends-on "exec-path-from-shell")
 (depends-on "feature-mode")
 (depends-on "flx-ido")
 (depends-on "flycheck")
