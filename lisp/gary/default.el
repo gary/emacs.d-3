@@ -20,7 +20,7 @@
       use-package-always-ensure   t)
 
 (require 'my-aliases)
-;; (require 'my-appearance)
+(require 'my-appearance)
 ;; (require 'my-custom)
 ;; (require 'my-edit-server)
 (require 'my-env)

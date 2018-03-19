@@ -14,5 +14,7 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package delight :defer t)
+
 (defconst my-custom-file
   (concat user-emacs-directory "lisp/" user-login-name "/my-custom.el"))

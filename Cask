@@ -48,7 +48,6 @@
 (depends-on "seq")
 (depends-on "slime")
 (depends-on "smex")
-(depends-on "solarized-theme")
 (depends-on "switch-window")
 (depends-on "web-mode")
 (depends-on "wgrep-ag")
