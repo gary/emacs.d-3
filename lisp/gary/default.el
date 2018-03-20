@@ -22,7 +22,6 @@
 (require 'my-aliases)
 (require 'my-appearance)
 ;; (require 'my-custom)
-;; (require 'my-edit-server)
 (require 'my-env)
 ;; (require 'my-file-management)
 ;; (require 'my-flycheck)

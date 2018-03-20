@@ -11,7 +11,6 @@
 (depends-on "coffee-mode")
 (depends-on "dash")
 (depends-on "dictionary")
-(depends-on "edit-server")
 (depends-on "enh-ruby-mode")
 (depends-on "feature-mode")
 (depends-on "flx-ido")
