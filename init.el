@@ -15,6 +15,7 @@
   (require 'use-package))
 
 (use-package delight :defer t)
+(use-package f       :demand t)
 
 (defconst my-custom-file
-  (concat user-emacs-directory "lisp/" user-login-name "/my-custom.el"))
+  (f-join user-emacs-directory "lisp" user-login-name "my-custom.el"))
