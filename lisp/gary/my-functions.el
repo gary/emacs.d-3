@@ -56,9 +56,6 @@ abort completely with `C-g'."
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
-(defun turn-off-tool-bar ()
-  (if (functionp 'tool-bar-mode) (tool-bar-mode -1)))
-
 (defun vi-open-next-line (arg)
   "Move to the next line (like vi) and then opens a line."
   (interactive "p")
