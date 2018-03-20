@@ -4,6 +4,12 @@
 
 ;;; Code:
 
+(use-package aggressive-indent
+  :defer t
+  :delight
+  :init
+  (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
+
 (use-package exec-path-from-shell
   :demand t
   :if (memq window-system '(mac ns))
@@ -20,6 +26,13 @@
   :after flycheck
   :config
   (flycheck-pos-tip-mode))
+
+(use-package paredit
+  :defer t
+  :delight
+  :init
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
 
 (use-package solarized-theme
   :init
