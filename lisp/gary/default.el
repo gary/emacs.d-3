@@ -24,7 +24,7 @@
 ;; (require 'my-custom)
 (require 'my-env)
 (require 'my-file-management)
-;; (require 'my-flycheck)
+(require 'my-flycheck)
 ;; (require 'my-functions)
 ;; (require 'my-global-bindings)
 ;; (require 'my-ido)

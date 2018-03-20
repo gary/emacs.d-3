@@ -11,7 +11,6 @@
 
 (add-hook 'prog-mode-hook #'column-number-mode)
 (add-hook 'prog-mode-hook #'electric-pair-mode)
-(add-hook 'prog-mode-hook #'flycheck-mode)
 (add-hook 'prog-mode-hook #'flyspell-prog-mode)
 (add-hook 'prog-mode-hook #'turn-off-electric-indent-mode)
 (add-hook 'prog-mode-hook #'turn-on-hl-line-mode)

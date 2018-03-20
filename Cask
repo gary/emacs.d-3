@@ -14,8 +14,6 @@
 (depends-on "enh-ruby-mode")
 (depends-on "feature-mode")
 (depends-on "flx-ido")
-(depends-on "flycheck")
-(depends-on "flycheck-pos-tip")
 (depends-on "git-commit")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
