@@ -23,8 +23,6 @@
 
 (define-key (current-global-map) [remap async-shell-command]
   'with-editor-async-shell-command)
-(define-key (current-global-map) [remap find-file-other-window]
-  'ido-find-file-other-window)
 (define-key (current-global-map) [remap isearch-backward-regexp]
   'isearch-backward)
 (define-key (current-global-map) [remap isearch-forward-regexp]
@@ -44,7 +42,6 @@
 
 (define-key ctl-x-map "\\" 'align-regexp)
 (define-key ctl-x-map "\C-k" 'kill-region)
-(define-key ctl-x-map "\M-f" 'ido-find-file-other-window)
 
 (global-set-key   (kbd "C-w")           'backward-kill-word)
 (global-set-key   (kbd "M-y")           'browse-kill-ring)

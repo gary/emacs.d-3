@@ -18,8 +18,7 @@
 (add-to-list 'clean-buffer-list-kill-regexps "\\.js$")
 (add-to-list 'clean-buffer-list-kill-regexps "\\.rb$")
 
-(let ((var-directory (f-join user-emacs-directory "var"))
-      (emacs-tmp-dir (format "%s%s" temporary-file-directory "org.gnu.emacs")))
+(let ((emacs-tmp-dir (format "%s%s" temporary-file-directory "org.gnu.emacs")))
   (setq abbrev-file-name (f-join var-directory "abbrev_defs")
         auto-save-file-name-transforms `((".*" ,emacs-tmp-dir t))
         auto-save-list-file-prefix   emacs-tmp-dir
@@ -27,7 +26,6 @@
         bookmark-default-file        (f-join var-directory "emacs.bmk")
         custom-file                  my-custom-file
         emacs-download-dir           (f-join var-directory "downloads/")
-        ido-save-directory-list-file (f-join var-directory "ido.last")
         ispell-personal-dictionary   (f-join var-directory "ispell_english")
         projectile-cache-file (f-join var-directory "projectile.cache")
         projectile-known-projects-file (f-join var-directory "projectile-bookmarks.eld")

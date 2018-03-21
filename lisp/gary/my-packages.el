@@ -27,6 +27,36 @@
   :config
   (flycheck-pos-tip-mode))
 
+(use-package flx-ido
+  :after ido
+  :config
+  (flx-ido-mode 1))
+
+(use-package ido
+  :bind ("C-x M-f" . ido-find-file-other-window)
+  :config
+  (define-key (current-global-map) [remap find-file-other-window]
+    'ido-find-file-other-window)
+
+  (ido-mode t)
+  (ido-everywhere 1)
+  (setq ido-auto-merge-work-directories-length nil
+        ido-confirm-unique-completion t
+        ido-create-new-buffer 'always
+        ido-default-buffer-method 'selected-window
+        ido-enable-flex-matching t
+        ido-enable-prefix nil
+        ido-max-prospects 10
+        ido-save-directory-list-file (f-join var-directory "ido.last")
+        ido-use-faces nil
+        ido-use-filename-at-point 'guess
+        ido-use-virtual-buffers t))
+
+(use-package ido-completing-read+
+  :after ido
+  :config
+  (ido-ubiquitous-mode))
+
 (use-package paredit
   :defer t
   :delight

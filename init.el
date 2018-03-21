@@ -20,6 +20,9 @@
 (defconst my-custom-file
   (f-join user-emacs-directory "lisp" user-login-name "my-custom.el"))
 
+(defconst var-directory
+  (f-join user-emacs-directory "var"))
+
 (use-package emacs
   :init
   (add-hook 'before-make-frame-hook 'turn-off-tool-bar)
