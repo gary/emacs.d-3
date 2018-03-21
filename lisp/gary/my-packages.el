@@ -32,6 +32,10 @@
   :config
   (flx-ido-mode 1))
 
+(use-package gitconfig-mode :defer t)
+
+(use-package gitignore-mode :defer t)
+
 (use-package ido
   :bind ("C-x M-f" . ido-find-file-other-window)
   :config
@@ -56,6 +60,18 @@
   :after ido
   :config
   (ido-ubiquitous-mode))
+
+(use-package magit
+  :bind (:map mode-specific-map
+              ("g" . magit-status)))
+
+(use-package magithub
+  :disabled
+  :after magit
+  :config
+  (magithub-feature-autoinject t)
+  (setq magithub-clone-default-directory "~/src"
+        magithub-dir (f-join var-directory "magithub")))
 
 (use-package paredit
   :defer t
@@ -85,6 +101,13 @@
                            empty
                            space-after-tab
                            tab-mark)))
+
+(use-package with-editor
+  :init
+  (define-key (current-global-map) [remap async-shell-command]
+    'with-editor-async-shell-command)
+  (define-key (current-global-map) [remap shell-command]
+    'with-editor-shell-command))
 
 (provide 'my-packages)
 ;;; my-packages.el ends here

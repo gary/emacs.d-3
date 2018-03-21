@@ -6,7 +6,6 @@
 (global-set-key (kbd "C-c l")   'dictionary-lookup-definition)
 (global-set-key (kbd "M-x") #'endless/ispell-word-then-abbrev)
 (global-set-key (kbd "M-^") #'endless/ispell-word-then-abbrev)
-(global-set-key (kbd "C-c g")   'magit-status)
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "C-c C-m") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-g b r") #'yagist-buffer-private)
@@ -21,8 +20,6 @@
 
 (define-key 'help-command "a" 'apropos)
 
-(define-key (current-global-map) [remap async-shell-command]
-  'with-editor-async-shell-command)
 (define-key (current-global-map) [remap isearch-backward-regexp]
   'isearch-backward)
 (define-key (current-global-map) [remap isearch-forward-regexp]
@@ -36,8 +33,6 @@
 (define-key (current-global-map) [remap query-replace] 'query-replace-regexp)
 (define-key (current-global-map) [remap query-replace-regexp]
   'query-replace)
-(define-key (current-global-map) [remap shell-command]
-  'with-editor-shell-command)
 (define-key (current-global-map) [remap other-window] 'switch-window)
 
 (define-key ctl-x-map "\\" 'align-regexp)

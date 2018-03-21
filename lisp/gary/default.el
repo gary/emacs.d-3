@@ -17,7 +17,6 @@
 (require 'my-file-management)
 ;; (require 'my-functions)
 ;; (require 'my-global-bindings)
-;; (require 'my-magithub)
 ;; (require 'my-misc)
 ;; (require 'my-minibuffer)
 ;; (require 'my-mode-mappings)
