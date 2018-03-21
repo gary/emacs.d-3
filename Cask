@@ -22,7 +22,6 @@
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "powerline")
-(depends-on "projectile")
 (depends-on "rbenv")
 (depends-on "rspec-mode")
 (depends-on "rubocop")

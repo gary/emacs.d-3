@@ -27,8 +27,6 @@
         custom-file                  my-custom-file
         emacs-download-dir           (f-join var-directory "downloads/")
         ispell-personal-dictionary   (f-join var-directory "ispell_english")
-        projectile-cache-file (f-join var-directory "projectile.cache")
-        projectile-known-projects-file (f-join var-directory "projectile-bookmarks.eld")
         recentf-save-file            (f-join var-directory "recentf")
         save-place-file              (f-join var-directory "places")
         slime-repl-history-file      (f-join var-directory "slime-history.eld")

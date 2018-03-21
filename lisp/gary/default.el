@@ -22,7 +22,6 @@
 ;; (require 'my-mode-mappings)
 (load-library "my-packages")
 ;; (require 'my-prog-mode)
-;; (require 'my-projectile)
 ;; (require 'my-registers)
 ;; (require 'my-ruby)
 ;; (require 'my-term)

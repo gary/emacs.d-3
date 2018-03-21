@@ -82,6 +82,15 @@
   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
 
+(use-package projectile
+  :delight '(:eval (concat " " (projectile-project-name)))
+  :init
+  (setq projectile-known-projects-file (f-join var-directory "projectile-bookmarks.eld"))
+  :config
+  (projectile-mode)
+  (setq projectile-cache-file (f-join var-directory "projectile.cache")
+        projectile-enable-caching t))
+
 (use-package solarized-theme
   :init
   (setq solarized-distinct-fringe-background t
