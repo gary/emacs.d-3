@@ -10,6 +10,11 @@
   :init
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
 
+(use-package enh-ruby-mode
+  :interpreter "ruby"
+  :mode (("\\(\.?\\)Brewfile" . enh-ruby-mode)
+         ("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode)))
+
 (use-package exec-path-from-shell
   :demand t
   :if (memq window-system '(mac ns))
@@ -61,6 +66,9 @@
   :config
   (ido-ubiquitous-mode))
 
+(use-package inf-ruby
+  :disabled) ; bindings are inflexible, load/unload as needed
+
 (use-package kaesar)
 
 (use-package magit
@@ -90,6 +98,30 @@
   (projectile-mode)
   (setq projectile-cache-file (f-join var-directory "projectile.cache")
         projectile-enable-caching t))
+
+(use-package rbenv
+  :init
+  (add-hook 'enh-ruby-mode-hook #'rbenv-use-corresponding)
+  :config
+  (global-rbenv-mode))
+
+(use-package rspec-mode
+  :after yasnippet
+  :delight
+  :hook enh-ruby-mode
+  :config
+  (defadvice rspec-compile (around rspec-compile-around)
+    "Use BASH shell for running the specs because of ZSH issues."
+    (let ((shell-file-name "/bin/bash"))
+      ad-do-it))
+  (ad-activate 'rspec-compile)
+
+  (rspec-install-snippets))
+
+(use-package rubocop
+  :delight
+  :init
+  (add-hook 'enh-ruby-mode-hook #'rubocop-mode))
 
 (use-package solarized-theme
   :init
@@ -136,6 +168,18 @@
   (setq yagist-encrypt-risky-config t
         yagist-view-gist t
         yagist-working-directory "~/src/gists"))
+
+(use-package yasnippet
+  :delight yas-minor-mode
+  :init
+  (add-hook 'prog-mode-hook #'yas-minor-mode)
+  :config
+  (add-to-list 'hippie-expand-try-functions-list 'yas-hippie-try-expand)
+  (yas-reload-all))
+
+(use-package yard-mode
+  :delight
+  :hook enh-ruby-mode)
 
 (provide 'my-packages)
 ;;; my-packages.el ends here

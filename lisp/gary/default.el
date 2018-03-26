@@ -23,12 +23,10 @@
 (load-library "my-packages")
 ;; (require 'my-prog-mode)
 ;; (require 'my-registers)
-;; (require 'my-ruby)
 ;; (require 'my-term)
 ;; (require 'my-text-mode)
 ;; (require 'my-utf8)
 ;; (require 'my-web-mode)
-;; (require 'my-yasnippet)
 
 (provide 'default)
 ;;; default.el ends here
