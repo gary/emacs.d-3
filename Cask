@@ -2,7 +2,6 @@
 (source marmalade)
 (source melpa)
 
-(depends-on "ag")
 (depends-on "anything")
 (depends-on "browse-kill-ring")
 (depends-on "cask")
@@ -18,7 +17,6 @@
 (depends-on "markdown-mode")
 (depends-on "package-build")
 (depends-on "pallet")
-(depends-on "s")
 (depends-on "seq")
 (depends-on "slime")
 (depends-on "smex")

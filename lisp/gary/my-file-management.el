@@ -12,7 +12,7 @@
                                               "*Occur*"
                                               "*Bookmark List*"
                                               "*Ediff Registry*"
-                                              "*ack*"
+                                              "*ag search"
                                               "*markdown-output*"))
 (add-to-list 'clean-buffer-list-kill-regexps "\\.el$")
 (add-to-list 'clean-buffer-list-kill-regexps "\\.js$")

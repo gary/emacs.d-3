@@ -14,8 +14,9 @@
 (eval-when-compile
   (require 'use-package))
 
-(use-package delight :defer t)
-(use-package f       :demand t)
+(use-package delight                           :defer t)
+(use-package f                                 :demand t)
+(use-package use-package-ensure-system-package :defer t)
 
 (defconst my-custom-file
   (f-join user-emacs-directory "lisp" user-login-name "my-custom.el"))

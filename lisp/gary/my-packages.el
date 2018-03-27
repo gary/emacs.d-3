@@ -4,6 +4,11 @@
 
 ;;; Code:
 
+(use-package ag
+  :bind (:map mode-specific-map
+              ("a" . ag-regexp))
+  :ensure-system-package ag)
+
 (use-package aggressive-indent
   :defer t
   :delight
