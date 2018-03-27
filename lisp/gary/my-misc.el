@@ -6,7 +6,6 @@
 (put 'upcase-region 'disabled nil)      ; change case enabled
 (put 'eval-expression 'disabled nil)    ; allow eval commands
 
-(set-default 'imenu-auto-rescan t)
 (set-default 'indent-tabs-mode nil)
 
 (setq diff-switches "-u"
