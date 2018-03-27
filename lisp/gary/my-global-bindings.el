@@ -8,13 +8,6 @@
 (global-set-key (kbd "M-^") #'endless/ispell-word-then-abbrev)
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "C-c C-m") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-g b r") #'yagist-buffer-private)
-(global-set-key (kbd "C-c C-g b") #'yagist-buffer)
-(global-set-key (kbd "C-c C-g l") #'yagist-list)
-(global-set-key (kbd "C-c C-g r p") #'yagist-region-private)
-(global-set-key (kbd "C-c C-g r") #'yagist-region)
-(global-set-key (kbd "C-c C-g g p") #'yagist-region-or-buffer-private)
-(global-set-key (kbd "C-c C-g g") #'yagist-region-or-buffer)
 
 ;; Builtin functionality
 

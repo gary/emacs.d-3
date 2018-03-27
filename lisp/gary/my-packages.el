@@ -61,6 +61,8 @@
   :config
   (ido-ubiquitous-mode))
 
+(use-package kaesar)
+
 (use-package magit
   :bind (:map mode-specific-map
               ("g" . magit-status)))
@@ -108,6 +110,23 @@
     'with-editor-async-shell-command)
   (define-key (current-global-map) [remap shell-command]
     'with-editor-shell-command))
+
+(use-package yagist
+  :requires kaesar
+  :init
+  (add-hook 'prog-mode-hook #'yagist-global-minor-mode)
+  (bind-keys :prefix-map my-yagist-prefix-map
+             :prefix "C-c C-g"
+             ("B" . yagist-buffer-private)
+             ("G" . yagist-region-or-buffer-private)
+             ("R" . yagist-region-private)
+             ("b" . yagist-buffer)
+             ("g" . yagist-region-or-buffer)
+             ("l" . yagist-list)
+             ("r" . yagist-region))
+  (setq yagist-encrypt-risky-config t
+        yagist-view-gist t
+        yagist-working-directory "~/src/gists"))
 
 (provide 'my-packages)
 ;;; my-packages.el ends here
