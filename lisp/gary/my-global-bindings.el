@@ -41,8 +41,6 @@
 (global-set-key   (kbd "C-<f10>")       'menu-bar-mode)
 (global-set-key   (kbd "C-c r")         'revert-buffer)
 (global-set-key   (kbd "<C-return>")    'set-mark-command)
-(global-set-key   (kbd "C-c t")         'get-term)
-(global-set-key   (kbd "C-c T")         'multi-term-dedicated-toggle)
 (global-set-key   (kbd "C-=")           'text-scale-decrease)
 (global-set-key   (kbd "C-+")           'text-scale-increase)
 (global-set-key   (kbd "C-c ^")         'top-level)
