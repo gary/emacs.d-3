@@ -15,7 +15,6 @@
 (define-key (current-global-map) [remap query-replace] 'query-replace-regexp)
 (define-key (current-global-map) [remap query-replace-regexp]
   'query-replace)
-(define-key (current-global-map) [remap other-window] 'switch-window)
 
 (define-key ctl-x-map "\\" 'align-regexp)
 (define-key ctl-x-map "\C-k" 'kill-region)

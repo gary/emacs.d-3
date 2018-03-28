@@ -251,6 +251,11 @@ abort completely with `C-g'."
   :config
   (setq smex-save-file (f-join var-directory "smex-items")))
 
+(use-package switch-window
+  :defer t
+  :init
+  (define-key (current-global-map) [remap other-window] 'switch-window))
+
 (use-package web-mode
   :config
   (setq web-mode-engines-alist '(("erb" . "\\.erb\\'")))
