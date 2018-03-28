@@ -2,7 +2,6 @@
 (source marmalade)
 (source melpa)
 
-(depends-on "browse-kill-ring")
 (depends-on "cask")
 (depends-on "coffee-mode")
 (depends-on "dictionary")

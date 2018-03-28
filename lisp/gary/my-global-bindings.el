@@ -29,7 +29,6 @@
 (define-key ctl-x-map "\C-k" 'kill-region)
 
 (global-set-key   (kbd "C-w")           'backward-kill-word)
-(global-set-key   (kbd "M-y")           'browse-kill-ring)
 (global-set-key   (kbd "C-c C-u")       'browse-url-at-point)
 (global-set-key   (kbd "<C-tab>")       'bury-buffer)
 (global-set-key   (kbd "C-c j")         'delete-indentation)

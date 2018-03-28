@@ -15,6 +15,9 @@
   :init
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
 
+(use-package browse-kill-ring
+  :bind ("M-y" . browse-kill-ring))
+
 (use-package enh-ruby-mode
   :interpreter "ruby"
   :mode (("\\(\.?\\)Brewfile" . enh-ruby-mode)
