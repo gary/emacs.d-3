@@ -191,6 +191,13 @@
   :config
   (load-theme 'solarized-dark t))
 
+(use-package smex
+  :bind (("C-x C-m" . smex)
+         :map mode-specific-map
+         ("C-m" . smex-major-mode-commands))
+  :config
+  (setq smex-save-file (f-join var-directory "smex-items")))
+
 (use-package web-mode
   :config
   (setq web-mode-engines-alist '(("erb" . "\\.erb\\'")))

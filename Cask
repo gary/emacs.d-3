@@ -9,7 +9,6 @@
 (depends-on "pallet")
 (depends-on "seq")
 (depends-on "slime")
-(depends-on "smex")
 (depends-on "switch-window")
 (depends-on "wgrep-ag")
 (depends-on "xkcd")
