@@ -30,8 +30,6 @@
         save-place-file              (f-join var-directory "places")
         slime-repl-history-file      (f-join var-directory "slime-history.eld")
         tramp-persistency-file-name  (f-join var-directory "tramp")
-        xkcd-cache-dir               (f-join var-directory "xkcd/")
-        xkcd-cache-latest            (f-join xkcd-cache-dir "latest")
         ))
 
 (provide 'my-file-management)

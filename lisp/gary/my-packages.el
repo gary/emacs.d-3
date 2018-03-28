@@ -318,5 +318,10 @@ abort completely with `C-g'."
   :delight
   :hook enh-ruby-mode)
 
+(use-package xkcd
+  :config
+  (setq xkcd-cache-dir    (f-join var-directory "xkcd/")
+        xkcd-cache-latest (f-join xkcd-cache-dir "latest")))
+
 (provide 'my-packages)
 ;;; my-packages.el ends here
