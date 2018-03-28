@@ -18,6 +18,9 @@
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
 
+(use-package coffee-mode
+  :disabled)
+
 (use-package enh-ruby-mode
   :interpreter "ruby"
   :mode (("\\(\.?\\)Brewfile" . enh-ruby-mode)
@@ -29,6 +32,8 @@
   :config
   (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize))
+
+(use-package feature-mode :defer t)
 
 (use-package flycheck
   :init
@@ -77,7 +82,16 @@
 (use-package inf-ruby
   :disabled) ; bindings are inflexible, load/unload as needed
 
+(use-package js2-mode
+  :ensure-system-package node
+  :interpreter "node"
+  :mode "\\.js\\'")
+
 (use-package kaesar)
+
+(use-package markdown-mode
+  :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
+  :ensure-system-package markdown)
 
 (use-package magit
   :bind (:map mode-specific-map
@@ -177,6 +191,12 @@
   :config
   (load-theme 'solarized-dark t))
 
+(use-package web-mode
+  :config
+  (setq web-mode-engines-alist '(("erb" . "\\.erb\\'")))
+  :pin marmalade
+  :mode "\\html?\\'" "\\.erb\\'")
+
 (use-package whitespace
   :delight
   :config
@@ -215,6 +235,8 @@
   (setq yagist-encrypt-risky-config t
         yagist-view-gist t
         yagist-working-directory "~/src/gists"))
+
+(use-package yaml-mode :defer t)
 
 (use-package yasnippet
   :delight yas-minor-mode

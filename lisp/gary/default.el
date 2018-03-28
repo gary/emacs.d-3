@@ -25,7 +25,6 @@
 ;; (require 'my-registers)
 ;; (require 'my-text-mode)
 ;; (require 'my-utf8)
-;; (require 'my-web-mode)
 
 (provide 'default)
 ;;; default.el ends here
