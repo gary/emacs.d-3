@@ -1,9 +1,3 @@
-;; Third party functionality
-
-(global-set-key (kbd "C-c l")   'dictionary-lookup-definition)
-(global-set-key (kbd "M-x") #'endless/ispell-word-then-abbrev)
-(global-set-key (kbd "M-^") #'endless/ispell-word-then-abbrev)
-
 ;; Builtin functionality
 
 (define-key 'help-command "a" 'apropos)

@@ -23,7 +23,6 @@
 (load-library "my-packages")
 ;; (require 'my-prog-mode)
 ;; (require 'my-registers)
-;; (require 'my-text-mode)
 ;; (require 'my-utf8)
 
 (provide 'default)

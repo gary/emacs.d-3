@@ -3,7 +3,6 @@
 (source melpa)
 
 (depends-on "cask")
-(depends-on "dictionary")
 (depends-on "httpcode")
 (depends-on "package-build")
 (depends-on "pallet")

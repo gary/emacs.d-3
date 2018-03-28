@@ -26,7 +26,6 @@
         bookmark-default-file        (f-join var-directory "emacs.bmk")
         custom-file                  my-custom-file
         emacs-download-dir           (f-join var-directory "downloads/")
-        ispell-personal-dictionary   (f-join var-directory "ispell_english")
         recentf-save-file            (f-join var-directory "recentf")
         save-place-file              (f-join var-directory "places")
         slime-repl-history-file      (f-join var-directory "slime-history.eld")
