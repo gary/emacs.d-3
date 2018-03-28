@@ -262,6 +262,9 @@ abort completely with `C-g'."
   :pin marmalade
   :mode "\\html?\\'" "\\.erb\\'")
 
+(use-package wgrep-ag
+  :hook (ag-mode-hook . wgrep-ag-setup))
+
 (use-package whitespace
   :delight
   :config

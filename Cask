@@ -8,5 +8,4 @@
 (depends-on "pallet")
 (depends-on "seq")
 (depends-on "slime")
-(depends-on "wgrep-ag")
 (depends-on "xkcd")
