@@ -28,6 +28,12 @@
   :init
   (add-hook 'before-make-frame-hook 'turn-off-tool-bar)
   (add-hook 'emacs-startup-hook 'init-frame)
+  (add-hook 'prog-mode-hook #'electric-pair-mode)
+  (add-hook 'prog-mode-hook #'turn-on-hl-line-mode)
+  (add-hook 'prog-mode-hook #'turn-on-prettify-symbols-mode)
+  (add-hook 'prog-mode-hook #'turn-on-save-place-mode)
+  (add-hook 'prog-mode-hook #'turn-on-visual-line-mode)
+  (add-hook 'prog-mode-hook #'whitespace-mode)
   (bind-keys ((kbd "<f5>") . increase-opacity)
              ((kbd "<f6>") . decrease-opacity))
   :bind (("<C-SPC>"    . hippie-expand)
@@ -46,7 +52,11 @@
          ("C-u"   . browse-url-at-point)
          ("^"     . top-level)
          ("j"     . delete-indentation)
-         ("r"     . revert-buffer))
+         ("r"     . revert-buffer)
+         :map prog-mode-map
+         ("<C-backspace>" . delete-pair))
+  :delight
+  (visual-line-mode)
   :config
   ;; remappings
   (define-key (current-global-map) [remap isearch-backward-regexp]
@@ -129,6 +139,13 @@
 
   (defun turn-off-tool-bar ()
     (if (functionp 'tool-bar-mode) (tool-bar-mode -1)))
+
+  (defun turn-on-hl-line-mode ()
+    (when (> (display-color-cells) 8)
+      (hl-line-mode t)))
+
+  (defun turn-on-save-place-mode ()
+    (save-place-mode t))
 
   (defun vi-open-next-line (arg)
     "Move to the next line (like vi) and then opens a line."

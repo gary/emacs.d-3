@@ -17,7 +17,6 @@
 ;; (require 'my-minibuffer)
 ;; (require 'my-mode-mappings)
 (load-library "my-packages")
-;; (require 'my-prog-mode)
 ;; (require 'my-registers)
 ;; (require 'my-utf8)
 
