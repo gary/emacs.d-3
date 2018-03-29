@@ -4,8 +4,6 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-`") 'other-frame)
-
 (setq browse-url-browser-function 'browse-url-default-macosx-browser
       mac-command-modifier        'meta ; command is alt in osx
       mac-option-modifier         'alt
@@ -15,8 +13,6 @@
 (require 'my-aliases)
 ;; (require 'my-custom)
 (require 'my-file-management)
-;; (require 'my-functions)
-;; (require 'my-global-bindings)
 ;; (require 'my-misc)
 ;; (require 'my-minibuffer)
 ;; (require 'my-mode-mappings)
