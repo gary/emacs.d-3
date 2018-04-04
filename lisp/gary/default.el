@@ -10,7 +10,6 @@
       ring-bell-function          'ignore
       use-package-always-ensure   t)
 
-(require 'my-aliases)
 ;; (require 'my-custom)
 (require 'my-file-management)
 ;; (require 'my-misc)

@@ -74,6 +74,9 @@
     'query-replace)
   (define-key 'help-command "a" 'apropos)
 
+  ;; aliases
+  (defalias 'yes-or-no-p 'y-or-n-p)
+
   ;; appearance
   (when window-system
     (setq frame-title-format '(buffer-file-name "%f" ("%b")))
