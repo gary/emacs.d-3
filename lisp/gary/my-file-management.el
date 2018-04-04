@@ -4,20 +4,6 @@
       kept-old-versions 2
       version-control t)
 
-(midnight-delay-set 'midnight-delay 4400)
-(add-to-list 'clean-buffer-list-kill-never-buffer-names "*msg*")
-(add-to-list 'clean-buffer-list-kill-never-regexps "^\\*shell-")
-(append clean-buffer-list-kill-buffer-names '("*Shell Command Output*"
-                                              "*Completions*"
-                                              "*Occur*"
-                                              "*Bookmark List*"
-                                              "*Ediff Registry*"
-                                              "*ag search"
-                                              "*markdown-output*"))
-(add-to-list 'clean-buffer-list-kill-regexps "\\.el$")
-(add-to-list 'clean-buffer-list-kill-regexps "\\.js$")
-(add-to-list 'clean-buffer-list-kill-regexps "\\.rb$")
-
 (let ((emacs-tmp-dir (format "%s%s" temporary-file-directory "org.gnu.emacs")))
   (setq abbrev-file-name (f-join var-directory "abbrev_defs")
         auto-save-file-name-transforms `((".*" ,emacs-tmp-dir t))

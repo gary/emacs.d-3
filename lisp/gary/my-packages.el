@@ -158,6 +158,22 @@ abort completely with `C-g'."
   (setq magithub-clone-default-directory "~/src"
         magithub-dir (f-join var-directory "magithub")))
 
+(use-package midnight
+  :config
+  (add-to-list 'clean-buffer-list-kill-never-buffer-names "*msg*")
+  (add-to-list 'clean-buffer-list-kill-never-regexps "^\\*shell-")
+  (append clean-buffer-list-kill-buffer-names '("*Shell Command Output*"
+                                                "*Completions*"
+                                                "*Occur*"
+                                                "*Bookmark List*"
+                                                "*Ediff Registry*"
+                                                "*ag search"
+                                                "*markdown-output*"))
+  (add-to-list 'clean-buffer-list-kill-regexps "\\.el\\'")
+  (add-to-list 'clean-buffer-list-kill-regexps "\\.js\\'")
+  (add-to-list 'clean-buffer-list-kill-regexps "\\.rb\\'")
+  (midnight-delay-set 'midnight-delay 4400))
+
 (use-package multi-term
   :bind (:map mode-specific-map
               ("t" . get-term)
