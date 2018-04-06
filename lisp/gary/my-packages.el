@@ -15,6 +15,9 @@
   :init
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
 
+(use-package autorevert
+  :delight auto-revert-mode)
+
 (use-package bookmark
   :config
   (setq bookmark-default-file (f-join var-directory "emacs.bmk")))
@@ -33,6 +36,14 @@
              ("m" . dictionary-match-words)
              ("s" . dictionary-search)))
 
+(use-package diff
+  :config
+  (setq diff-switches "-u"))
+
+(use-package ediff
+  :config
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain))
+
 (use-package enh-ruby-mode
   :interpreter "ruby"
   :mode (("\\(\.?\\)Brewfile" . enh-ruby-mode)
@@ -46,6 +57,10 @@
   (exec-path-from-shell-initialize))
 
 (use-package feature-mode :defer t)
+
+(use-package ffap
+  :config
+  (setq ffap-require-prefix t))
 
 (use-package flycheck
   :init

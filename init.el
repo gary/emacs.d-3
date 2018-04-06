@@ -14,6 +14,8 @@
 (eval-when-compile
   (require 'use-package))
 
+(setq use-package-always-ensure t)
+
 (use-package delight                           :defer t)
 (use-package f                                 :demand t)
 (use-package use-package-ensure-system-package :defer t)
@@ -112,6 +114,30 @@
         kept-old-versions 2
         version-control t)
   (load custom-file)
+
+  ;; miscellaneous
+  (add-to-list 'safe-local-variable-values '(lexical-binding . t))
+  (add-to-list 'safe-local-variable-values '(whitespace-line-column . 80))
+  (put 'narrow-to-region 'disabled nil) ; narrow enabled
+  (put 'narrow-to-page   'disabled nil)
+  (put 'upcase-region    'disabled nil) ; change case enabled
+  (put 'eval-expression  'disabled nil) ; allow eval commands
+  (set-default 'indent-tabs-mode nil)
+  (setq-default abbrev-mode t)
+  (setq browse-url-browser-function 'browse-url-default-macosx-browser
+        mac-command-modifier 'meta ; command is alt in osx
+        mac-option-modifier 'alt
+        mouse-yank-at-point t
+        ring-bell-function 'ignore
+        save-abbrevs 'silently
+        shift-select-mode nil
+        uniquify-after-kill-buffer-p t
+        uniquify-buffer-name-style 'reverse
+        uniquify-ignore-buffers-re "^\\*"
+        uniquify-separator "|"
+        yank-pop-change-selection t)
+  (delete-selection-mode t) ; replace selection by typing
+  (icomplete-mode 1)        ; incremental minibuffer completion
 
   (defun decrease-opacity ()
     (interactive)

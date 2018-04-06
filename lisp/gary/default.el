@@ -4,13 +4,6 @@
 
 ;;; Code:
 
-(setq browse-url-browser-function 'browse-url-default-macosx-browser
-      mac-command-modifier        'meta ; command is alt in osx
-      mac-option-modifier         'alt
-      ring-bell-function          'ignore
-      use-package-always-ensure   t)
-
-;; (require 'my-misc)
 ;; (require 'my-minibuffer)
 ;; (require 'my-mode-mappings)
 (load-library "my-packages")
