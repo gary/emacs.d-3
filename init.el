@@ -21,6 +21,9 @@
 (defconst my-custom-file
   (f-join user-emacs-directory "lisp" user-login-name "my-custom.el"))
 
+(defconst tmp-directory
+  (f-join temporary-file-directory "org.gnu.emacs"))
+
 (defconst var-directory
   (f-join user-emacs-directory "var"))
 
@@ -56,6 +59,7 @@
          :map prog-mode-map
          ("<C-backspace>" . delete-pair))
   :delight
+  (abbrev-mode)
   (visual-line-mode)
   :config
   ;; remappings
@@ -95,6 +99,19 @@
   (setq inhibit-startup-message t
         initial-scratch-message nil
         split-height-threshold nil) ; force vertical split
+
+  ;; file management
+  (setq abbrev-file-name (f-join var-directory "abbrev_defs")
+        auto-save-file-name-transforms `((".*" ,tmp-directory t))
+        auto-save-list-file-prefix tmp-directory
+        backup-by-copying-when-linked t
+        backup-directory-alist `((".*" . ,tmp-directory))
+        custom-file my-custom-file
+        delete-old-versions t
+        kept-new-versions 16
+        kept-old-versions 2
+        version-control t)
+  (load custom-file)
 
   (defun decrease-opacity ()
     (interactive)

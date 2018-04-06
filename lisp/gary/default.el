@@ -10,8 +10,6 @@
       ring-bell-function          'ignore
       use-package-always-ensure   t)
 
-;; (require 'my-custom)
-(require 'my-file-management)
 ;; (require 'my-misc)
 ;; (require 'my-minibuffer)
 ;; (require 'my-mode-mappings)

@@ -15,6 +15,10 @@
   :init
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
 
+(use-package bookmark
+  :config
+  (setq bookmark-default-file (f-join var-directory "emacs.bmk")))
+
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
 
@@ -229,6 +233,10 @@ abort completely with `C-g'."
   (setq projectile-cache-file (f-join var-directory "projectile.cache")
         projectile-enable-caching t))
 
+(use-package recentf
+  :config
+  (setq recentf-save-file (f-join var-directory "recentf")))
+
 (use-package rbenv
   :init
   (add-hook 'enh-ruby-mode-hook #'rbenv-use-corresponding)
@@ -253,6 +261,10 @@ abort completely with `C-g'."
   :init
   (add-hook 'enh-ruby-mode-hook #'rubocop-mode))
 
+(use-package saveplace
+  :config
+  (setq save-place-file (f-join var-directory "places")))
+
 (use-package solarized-theme
   :init
   (setq solarized-distinct-fringe-background t
@@ -271,6 +283,10 @@ abort completely with `C-g'."
   :defer t
   :init
   (define-key (current-global-map) [remap other-window] 'switch-window))
+
+(use-package tramp
+  :config
+  (setq tramp-persistency-file-name  (f-join var-directory "tramp")))
 
 (use-package web-mode
   :config
