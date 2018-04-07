@@ -7,7 +7,6 @@
 ;; (require 'my-mode-mappings)
 (load-library "my-packages")
 ;; (require 'my-registers)
-;; (require 'my-utf8)
 
 (provide 'default)
 ;;; default.el ends here

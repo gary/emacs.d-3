@@ -103,6 +103,15 @@
         initial-scratch-message nil
         split-height-threshold nil) ; force vertical split
 
+  ;; character encoding
+  (prefer-coding-system 'utf-8)
+  (set-clipboard-coding-system 'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-language-environment 'UTF-8)
+  (set-selection-coding-system 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (setq coding-system-for-write 'utf-8)
+
   ;; file management
   (setq abbrev-file-name (f-join var-directory "abbrev_defs")
         auto-save-file-name-transforms `((".*" ,tmp-directory t))
