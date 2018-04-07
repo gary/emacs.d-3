@@ -33,6 +33,7 @@
   :init
   (add-hook 'before-make-frame-hook 'turn-off-tool-bar)
   (add-hook 'emacs-startup-hook 'init-frame)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode)
   (add-hook 'prog-mode-hook #'electric-pair-mode)
   (add-hook 'prog-mode-hook #'turn-on-hl-line-mode)
   (add-hook 'prog-mode-hook #'turn-on-prettify-symbols-mode)

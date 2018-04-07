@@ -4,7 +4,6 @@
 
 ;;; Code:
 
-;; (require 'my-minibuffer)
 ;; (require 'my-mode-mappings)
 (load-library "my-packages")
 ;; (require 'my-registers)
