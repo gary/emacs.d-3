@@ -15,6 +15,14 @@
   :init
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
 
+(use-package auto-package-update
+  :init
+  (setq apu--last-update-day-filename (concat var-directory "last-package-update-day"))
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (setq auto-package-update-hide-results t)
+  (auto-package-update-maybe))
+
 (use-package autorevert
   :delight auto-revert-mode)
 
