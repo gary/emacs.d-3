@@ -8,7 +8,20 @@
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
 
-(let ((default-directory "~/.emacs.d/lisp/"))
+(eval-and-compile
+  (define-inline emacs-path (path)
+    (expand-file-name path user-emacs-directory)))
+
+(defconst my-custom-file
+  (emacs-path (concat "lisp/" user-login-name "/my-custom.el")))
+
+(defconst tmp-directory
+  (concat temporary-file-directory "/org.gnu.emacs"))
+
+(defconst var-directory
+  (emacs-path "var/"))
+
+(let ((default-directory (emacs-path "lisp")))
   (normal-top-level-add-subdirs-to-load-path))
 
 (eval-when-compile
@@ -17,17 +30,7 @@
 (setq use-package-always-ensure t)
 
 (use-package delight                           :defer t)
-(use-package f                                 :demand t)
 (use-package use-package-ensure-system-package :defer t)
-
-(defconst my-custom-file
-  (f-join user-emacs-directory "lisp" user-login-name "my-custom.el"))
-
-(defconst tmp-directory
-  (f-join temporary-file-directory "org.gnu.emacs"))
-
-(defconst var-directory
-  (f-join user-emacs-directory "var"))
 
 (use-package emacs
   :init
@@ -113,7 +116,7 @@
   (setq coding-system-for-write 'utf-8)
 
   ;; file management
-  (setq abbrev-file-name (f-join var-directory "abbrev_defs")
+  (setq abbrev-file-name (concat var-directory "abbrev_defs")
         auto-save-file-name-transforms `((".*" ,tmp-directory t))
         auto-save-list-file-prefix tmp-directory
         backup-by-copying-when-linked t

@@ -20,7 +20,7 @@
 
 (use-package bookmark
   :config
-  (setq bookmark-default-file (f-join var-directory "emacs.bmk")))
+  (setq bookmark-default-file (concat var-directory "emacs.bmk")))
 
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
@@ -102,7 +102,7 @@
         ido-enable-flex-matching t
         ido-enable-prefix nil
         ido-max-prospects 10
-        ido-save-directory-list-file (f-join var-directory "ido.last")
+        ido-save-directory-list-file (concat var-directory "ido.last")
         ido-use-faces nil
         ido-use-filename-at-point 'guess
         ido-use-virtual-buffers t))
@@ -152,7 +152,7 @@ abort completely with `C-g'."
   :bind (("M-x" . endless/ispell-word-then-abbrev)
          ("M-^" . ispell-comments-and-strings))
   :config
-  (setq ispell-personal-dictionary (f-join var-directory "ispell_english")))
+  (setq ispell-personal-dictionary (concat var-directory "ispell_english")))
 
 (use-package js2-mode
   :ensure-system-package node
@@ -175,7 +175,7 @@ abort completely with `C-g'."
   :config
   (magithub-feature-autoinject t)
   (setq magithub-clone-default-directory "~/src"
-        magithub-dir (f-join var-directory "magithub")))
+        magithub-dir (concat var-directory "magithub")))
 
 (use-package midnight
   :config
@@ -242,15 +242,15 @@ abort completely with `C-g'."
 (use-package projectile
   :delight '(:eval (concat " " (projectile-project-name)))
   :init
-  (setq projectile-known-projects-file (f-join var-directory "projectile-bookmarks.eld"))
+  (setq projectile-known-projects-file (concat var-directory "projectile-bookmarks.eld"))
   :config
   (projectile-mode)
-  (setq projectile-cache-file (f-join var-directory "projectile.cache")
+  (setq projectile-cache-file (concat var-directory "projectile.cache")
         projectile-enable-caching t))
 
 (use-package recentf
   :config
-  (setq recentf-save-file (f-join var-directory "recentf")))
+  (setq recentf-save-file (concat var-directory "recentf")))
 
 (use-package rbenv
   :init
@@ -278,7 +278,7 @@ abort completely with `C-g'."
 
 (use-package saveplace
   :config
-  (setq save-place-file (f-join var-directory "places")))
+  (setq save-place-file (concat var-directory "places")))
 
 (use-package solarized-theme
   :init
@@ -292,7 +292,7 @@ abort completely with `C-g'."
          :map mode-specific-map
          ("C-m" . smex-major-mode-commands))
   :config
-  (setq smex-save-file (f-join var-directory "smex-items")))
+  (setq smex-save-file (concat var-directory "smex-items")))
 
 (use-package switch-window
   :defer t
@@ -301,7 +301,7 @@ abort completely with `C-g'."
 
 (use-package tramp
   :config
-  (setq tramp-persistency-file-name  (f-join var-directory "tramp")))
+  (setq tramp-persistency-file-name  (concat var-directory "tramp")))
 
 (use-package web-mode
   :config
@@ -367,8 +367,8 @@ abort completely with `C-g'."
 
 (use-package xkcd
   :config
-  (setq xkcd-cache-dir    (f-join var-directory "xkcd/")
-        xkcd-cache-latest (f-join xkcd-cache-dir "latest")))
+  (setq xkcd-cache-dir    (concat var-directory "xkcd/")
+        xkcd-cache-latest (concat xkcd-cache-dir "latest")))
 
 (provide 'my-packages)
 ;;; my-packages.el ends here
