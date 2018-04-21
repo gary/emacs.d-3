@@ -371,4 +371,4 @@ abort completely with `C-g'."
         xkcd-cache-latest (concat xkcd-cache-dir "latest")))
 
 (provide 'my-packages)
-;;; my-packages.el ends here
+;;; packages.el ends here

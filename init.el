@@ -13,7 +13,7 @@
     (expand-file-name path user-emacs-directory)))
 
 (defconst my-custom-file
-  (emacs-path (concat "lisp/" user-login-name "/my-custom.el")))
+  (emacs-path "custom.el"))
 
 (defconst tmp-directory
   (concat temporary-file-directory "/org.gnu.emacs"))
@@ -227,3 +227,5 @@ Goes backward if ARG is negative; error if CHAR not found."
                    (progn (goto-char
                            (if (> arg 0) (1- (point)) (1+ (point))))
                           (point))))))
+
+(load (emacs-path "packages"))
