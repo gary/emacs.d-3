@@ -1,3 +1,18 @@
+;;; init.el --- Initialization for my emacs config
+
+;; Copyright Gary Iams 2016-2018
+
+;; Author: Gary Iams <ge.iams@gmail.com>
+;; Created: 4 Feb 2016
+;; URL: https://github.com/gary/emacs.d-3/blob/master/init.el
+
+;;; Commentary:
+
+;; Initializes environment and sets up core configuration, bindings,
+;; and appearance before loading the rest of the packages I use.
+
+;;; Code:
+
 (require 'package)
 
 (setq package-enable-at-startup nil)
@@ -229,3 +244,4 @@ Goes backward if ARG is negative; error if CHAR not found."
                           (point))))))
 
 (load (emacs-path "packages"))
+;;; init.el ends here

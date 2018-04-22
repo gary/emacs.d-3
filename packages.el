@@ -2,6 +2,9 @@
 
 ;;; Commentary:
 
+;; Bootstraps all the packages I use, configuring most of them to be
+;; lazily loaded.
+
 ;;; Code:
 
 (use-package ag
