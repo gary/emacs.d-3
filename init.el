@@ -119,7 +119,6 @@
   (fringe-mode 10)
   (global-hi-lock-mode t)
   (scroll-bar-mode -1)
-  (set-cursor-color "deeppink")
   (set-default 'indicate-empty-lines t)
   (set-default 'truncate-lines t)
   (setq-default indicate-buffer-boundaries 'left)
