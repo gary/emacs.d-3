@@ -12,6 +12,7 @@
 ;; and appearance before loading the rest of the packages I use.
 
 ;;; Code:
+(defconst emacs-start-time (current-time))
 
 (require 'package)
 
@@ -49,6 +50,13 @@
 
 (use-package emacs
   :init
+  (add-hook 'after-init-hook
+            `(lambda ()
+               (let ((elapsed
+                      (float-time
+                       (time-subtract (current-time) emacs-start-time))))
+                 (message "Loading %s...done (%.3fs) [after-init]"
+                          ,load-file-name elapsed))) t)
   (add-hook 'before-make-frame-hook 'turn-off-tool-bar)
   (add-hook 'emacs-startup-hook 'init-frame)
   (add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode)
