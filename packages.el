@@ -52,6 +52,7 @@
   (setq diff-switches "-u"))
 
 (use-package dumb-jump
+  :requires ivy
   :init
   (bind-keys :prefix-map my-dumb-jump-prefix-map
              :prefix "M-g"
@@ -60,6 +61,8 @@
              ("i" . dumb-jump-go-prompt)
              ("x" . dumb-jump-go-prefer-external)
              ("z" . dumb-jump-go-prefer-external-other-window))
+  :config
+  (setq dumb-jump-selector 'ivy)
   :ensure-system-package ag)
 
 (use-package ediff
@@ -175,6 +178,8 @@ abort completely with `C-g'."
          ("M-^" . ispell-comments-and-strings))
   :config
   (setq ispell-personal-dictionary (concat var-directory "ispell_english")))
+
+(use-package ivy)  ; TODO: evaluate in full later
 
 (use-package js2-mode
   :ensure-system-package node
