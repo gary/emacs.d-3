@@ -51,6 +51,17 @@
   :config
   (setq diff-switches "-u"))
 
+(use-package dumb-jump
+  :init
+  (bind-keys :prefix-map my-dumb-jump-prefix-map
+             :prefix "M-g"
+             ("o" . dumb-jump-go-other-window)
+             ("j" . dumb-jump-go)
+             ("i" . dumb-jump-go-prompt)
+             ("x" . dumb-jump-go-prefer-external)
+             ("z" . dumb-jump-go-prefer-external-other-window))
+  :ensure-system-package ag)
+
 (use-package ediff
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
