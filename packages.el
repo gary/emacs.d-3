@@ -267,6 +267,7 @@ abort completely with `C-g'."
   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
 
 (use-package projectile
+  :requires ivy
   :delight '(:eval (concat " " (projectile-project-name)))
   :init
   (setq projectile-known-projects-file (concat var-directory "projectile-bookmarks.eld"))
@@ -274,6 +275,7 @@ abort completely with `C-g'."
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
   (setq projectile-cache-file (concat var-directory "projectile.cache")
+        projectile-completion-system 'ivy
         projectile-enable-caching t))
 
 (use-package recentf
