@@ -112,6 +112,16 @@
 
 (use-package gitignore-mode :defer t)
 
+(use-package harvest
+  :init
+  :requires (hydra ivy org)
+  :demand t
+  :config
+  (add-hook 'org-clock-in-hook 'harvest)
+  (add-hook 'org-clock-out-hook 'harvest-clock-out))
+
+(use-package hydra)
+
 (use-package ido
   :bind ("C-x M-f" . ido-find-file-other-window)
   :config
