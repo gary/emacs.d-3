@@ -255,7 +255,8 @@ abort completely with `C-g'."
   :init
   (setq projectile-known-projects-file (concat var-directory "projectile-bookmarks.eld"))
   :config
-  (projectile-mode)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1)
   (setq projectile-cache-file (concat var-directory "projectile.cache")
         projectile-enable-caching t))
 
