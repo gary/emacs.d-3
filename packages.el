@@ -202,9 +202,7 @@ abort completely with `C-g'."
   :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
   :ensure-system-package markdown)
 
-(use-package magit
-  :bind (:map mode-specific-map
-              ("g" . magit-status)))
+(use-package magit)
 
 (use-package magithub
   :disabled
