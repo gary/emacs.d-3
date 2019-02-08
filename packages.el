@@ -36,8 +36,7 @@
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
 
-(use-package coffee-mode
-  :disabled)
+(use-package coffee-mode)
 
 (use-package dictionary
   :init
