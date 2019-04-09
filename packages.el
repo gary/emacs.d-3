@@ -266,6 +266,11 @@ abort completely with `C-g'."
                         ("M-." . term-send-raw-meta))
   term-unbind-key-list '("C-z" "C-x" "C-c" "C-h" "C-y" "M-y" "<ESC>"))
 
+(use-package org
+  :config
+  (setq org-directory "~/var/org/"
+        org-agenda-files (file-expand-wildcards (concat org-directory "**/*.org"))))
+
 (use-package paredit
   :defer t
   :delight
