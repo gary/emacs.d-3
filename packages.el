@@ -107,6 +107,11 @@
   :config
   (flx-ido-mode 1))
 
+(use-package forge
+  :after magit
+  :init
+  (setq forge-database-file (concat var-directory "forge-database.sqlite")))
+
 (use-package gitconfig-mode :defer t)
 
 (use-package gitignore-mode :defer t)
@@ -197,14 +202,6 @@ abort completely with `C-g'."
   :ensure-system-package markdown)
 
 (use-package magit)
-
-(use-package magithub
-  :disabled
-  :after magit
-  :config
-  (magithub-feature-autoinject t)
-  (setq magithub-clone-default-directory "~/src"
-        magithub-dir (concat var-directory "magithub")))
 
 (use-package midnight
   :config
