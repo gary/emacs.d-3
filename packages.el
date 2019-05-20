@@ -112,12 +112,7 @@
 (use-package gitignore-mode :defer t)
 
 (use-package harvest
-  :init
-  :requires (hydra ivy org)
-  :demand t
-  :config
-  (add-hook 'org-clock-in-hook 'harvest)
-  (add-hook 'org-clock-out-hook 'harvest-clock-out))
+  :requires (hydra ivy))
 
 (use-package hydra)
 
@@ -267,6 +262,9 @@ abort completely with `C-g'."
   term-unbind-key-list '("C-z" "C-x" "C-c" "C-h" "C-y" "M-y" "<ESC>"))
 
 (use-package org
+  :init
+  (add-hook 'org-clock-in-hook #'harvest)
+  (add-hook 'org-clock-out-hook #'harvest-clock-out)
   :config
   (setq org-directory "~/var/org/"
         org-agenda-files (file-expand-wildcards (concat org-directory "**/*.org"))))
