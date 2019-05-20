@@ -57,6 +57,7 @@
                         ,load-file-name elapsed))) t)
 
 (add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode)
+(add-hook 'prog-mode-hook #'column-number-mode)
 (add-hook 'prog-mode-hook #'electric-pair-mode)
 (add-hook 'prog-mode-hook #'turn-on-hl-line-mode)
 (add-hook 'prog-mode-hook #'turn-on-prettify-symbols-mode)
