@@ -224,11 +224,14 @@
 
 (defun set-font-for-host (frame)
   (with-selected-frame frame
-    (setq ns-antialias-text t
-          ns-input-font "Inconsolata"
-          ns-input-fontsize 14
-          ns-pop-up-frames nil)
-    (ns-respond-to-change-font)))
+    (if (featurep 'ns)
+        (progn
+          (setq ns-antialias-text t
+                ns-input-font "Inconsolata"
+                ns-input-fontsize 14
+                ns-pop-up-frames nil)
+          (ns-respond-to-change-font))
+      (set-face-attribute 'default nil :family "Inconsolata" :height 110))))
 
 (defun toggle-window-split ()
   (interactive)
