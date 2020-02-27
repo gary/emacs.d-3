@@ -295,6 +295,9 @@ abort completely with `C-g'."
   :config
   (global-rbenv-mode))
 
+(use-package ripgrep
+  :ensure-system-package rg)
+
 (use-package rspec-mode
   :after yasnippet
   :delight
