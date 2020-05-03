@@ -9,7 +9,7 @@
 
 (use-package ag
   :bind (:map mode-specific-map
-              ("a" . ag-regexp))
+              ("s a" . ag-regexp))
   :ensure-system-package ag)
 
 (use-package aggressive-indent
@@ -296,6 +296,8 @@ abort completely with `C-g'."
   (global-rbenv-mode))
 
 (use-package ripgrep
+  :bind (:map mode-specific-map
+              ("s r" . ripgrep-regexp))
   :ensure-system-package rg)
 
 (use-package rspec-mode
