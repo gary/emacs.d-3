@@ -197,6 +197,11 @@ abort completely with `C-g'."
 
 (use-package kaesar)
 
+(use-package lsp-mode
+  :defer t
+  :init
+  (setq lsp-session-file (concat var-directory "lsp-session-v1")))
+
 (use-package markdown-mode
   :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
   :ensure-system-package markdown)
@@ -317,6 +322,9 @@ abort completely with `C-g'."
   :delight
   :init
   (add-hook 'enh-ruby-mode-hook #'rubocop-mode))
+
+(use-package rustic
+  :requires lsp-mode)
 
 (use-package saveplace
   :config
