@@ -117,9 +117,14 @@
 (use-package gitignore-mode :defer t)
 
 (use-package harvest
-  :requires (hydra ivy))
+  :disabled
+  :requires (org hydra ivy)
+  :init
+  (add-hook 'org-clock-in-hook #'harvest)
+  (add-hook 'org-clock-out-hook #'harvest-clock-out))
 
-(use-package hydra)
+(use-package hydra
+  :disabled)
 
 (use-package ido
   :bind ("C-x M-f" . ido-find-file-other-window)
@@ -265,8 +270,6 @@ abort completely with `C-g'."
 
 (use-package org
   :init
-  (add-hook 'org-clock-in-hook #'harvest)
-  (add-hook 'org-clock-out-hook #'harvest-clock-out)
   :config
   (setq org-directory "~/var/org/"
         org-agenda-files (file-expand-wildcards (concat org-directory "**/*.org"))))
