@@ -20,7 +20,7 @@
 
 (use-package auto-package-update
   :init
-  (setq apu--last-update-day-filename (concat var-directory "last-package-update-day"))
+  (setq auto-package-update-last-update-day-filename (concat var-directory "last-package-update-day"))
   :config
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
