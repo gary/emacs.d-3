@@ -357,6 +357,13 @@ abort completely with `C-g'."
   :config
   (setq tramp-persistency-file-name  (concat var-directory "tramp")))
 
+(use-package transient
+  :requires magit
+  :config
+  (setq transient-history-file (concat var-directory "transient/history.el")
+        transient-values-file (concat var-directory "transient/values.el")
+        transient-levels-file (concat var-directory "transient/levels.el")))
+
 (use-package web-mode
   :config
   (setq web-mode-engines-alist '(("erb" . "\\.erb\\'")))
