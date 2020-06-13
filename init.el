@@ -148,6 +148,8 @@
       delete-old-versions t
       kept-new-versions 16
       kept-old-versions 2
+      nsm-settings-file (concat var-directory "network-security.data")
+      save-place-file (concat var-directory "places")
       version-control t)
 (load custom-file)
 
