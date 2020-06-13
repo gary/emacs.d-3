@@ -108,6 +108,7 @@
   (flx-ido-mode 1))
 
 (use-package forge
+  :if (not (memq window-system '(pc w32)))
   :after magit
   :init
   (setq forge-database-file (concat var-directory "forge-database.sqlite")))
