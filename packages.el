@@ -282,6 +282,9 @@ abort completely with `C-g'."
   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
 
+(use-package powershell
+  :if (memq window-system '(pc w32)))
+
 (use-package projectile
   :requires ivy
   :delight '(:eval (concat " " (projectile-project-name)))
