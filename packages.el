@@ -348,6 +348,12 @@ abort completely with `C-g'."
   :config
   (setq smex-save-file (concat var-directory "smex-items")))
 
+(use-package ssh-agency
+  :if (memq window-system '(pc w32))
+  :config
+  (setenv "SSH_ASKPASS" "git-gui--askpass")
+  :after magit)
+
 (use-package switch-window
   :defer t
   :init
