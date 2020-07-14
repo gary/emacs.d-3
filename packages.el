@@ -50,6 +50,10 @@
   :config
   (setq diff-switches "-u"))
 
+(use-package dockerfile-mode
+  :config
+  (put 'dockerfile-image-name 'safe-local-varible #'stringp))
+
 (use-package dumb-jump
   :requires ivy
   :init
