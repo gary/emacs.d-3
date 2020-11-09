@@ -124,6 +124,8 @@
   (add-hook 'org-clock-in-hook #'harvest)
   (add-hook 'org-clock-out-hook #'harvest-clock-out))
 
+(use-package hcl-mode)
+
 (use-package hydra
   :disabled)
 
