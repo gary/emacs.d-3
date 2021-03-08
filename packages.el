@@ -205,6 +205,8 @@ abort completely with `C-g'."
 
 (use-package kaesar)
 
+(use-package kotlin-mode)
+
 (use-package lsp-mode
   :defer t
   :init
