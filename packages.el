@@ -198,6 +198,12 @@ abort completely with `C-g'."
 
 (use-package ivy)  ; TODO: evaluate in full later
 
+(use-package json-mode)
+
+(use-package json-reformat)
+
+(use-package json-snatcher)
+
 (use-package js2-mode
   :ensure-system-package node
   :interpreter "node"
