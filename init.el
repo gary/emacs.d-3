@@ -146,6 +146,7 @@
       backup-directory-alist `((".*" . ,tmp-directory))
       custom-file my-custom-file
       delete-old-versions t
+      emacs-lock-default-locking-mode 'kill
       kept-new-versions 16
       kept-old-versions 2
       nsm-settings-file (concat var-directory "network-security.data")
