@@ -163,7 +163,7 @@
 (put 'eval-expression  'disabled nil) ; allow eval commands
 (set-default 'indent-tabs-mode nil)
 (setq-default abbrev-mode t)
-(setq browse-url-browser-function 'browse-url-default-macosx-browser
+(setq browse-url-browser-function 'browse-url-default-browser
       mac-command-modifier 'meta ; command is alt in osx
       mac-option-modifier 'alt
       mouse-yank-at-point t
