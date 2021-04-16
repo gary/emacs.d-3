@@ -117,6 +117,8 @@
 
 (use-package gitignore-mode :defer t)
 
+(use-package groovy-mode)
+
 (use-package harvest
   :disabled
   :requires (org hydra ivy)
