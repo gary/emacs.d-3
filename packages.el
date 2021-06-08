@@ -308,6 +308,8 @@ abort completely with `C-g'."
   (setq org-directory "~/var/org/"
         org-agenda-files (file-expand-wildcards (concat org-directory "**/*.org"))))
 
+(use-package ox-jira)
+
 (use-package paredit
   :defer t
   :delight
