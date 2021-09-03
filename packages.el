@@ -237,6 +237,9 @@ abort completely with `C-g'."
 
 (use-package kotlin-mode)
 
+(use-package libgit
+  :if (memq window-system '(mac ns x)))
+
 (use-package lsp-mode
   :defer t
   :init
