@@ -112,6 +112,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; appearance
+(add-to-list 'default-frame-alist '(width . 173))
+(add-to-list 'default-frame-alist '(height . 81))
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 (when window-system
   (tooltip-mode -1)
@@ -198,8 +200,7 @@
 
 (defun init-layout (frame)
   (with-selected-frame frame
-    (set-frame-size frame 1155 1325 t)
-    (set-frame-position frame 1370 0)))
+    (set-frame-position frame 2500 0)))
 
 (defun opacity-modify (&optional dec)
   "Modify the transparency of the emacs frame; if DEC is t,
@@ -231,10 +232,10 @@
         (progn
           (setq ns-antialias-text t
                 ns-input-font "Inconsolata"
-                ns-input-fontsize 14
+                ns-input-fontsize 16
                 ns-pop-up-frames nil)
           (ns-respond-to-change-font))
-      (set-face-attribute 'default nil :family "Inconsolata" :height 110))))
+      (set-face-attribute 'default nil :family "Inconsolata" :height 120))))
 
 (defun toggle-window-split ()
   (interactive)
