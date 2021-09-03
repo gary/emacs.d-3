@@ -19,6 +19,7 @@
   (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
 
 (use-package auto-package-update
+  :disabled
   :init
   (setq auto-package-update-last-update-day-filename (concat var-directory "last-package-update-day"))
   :config
@@ -411,7 +412,6 @@ abort completely with `C-g'."
 (use-package web-mode
   :config
   (setq web-mode-engines-alist '(("erb" . "\\.erb\\'")))
-  :pin marmalade
   :mode "\\html?\\'" "\\.erb\\'")
 
 (use-package wgrep-ag
