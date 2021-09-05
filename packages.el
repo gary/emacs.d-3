@@ -238,7 +238,9 @@ abort completely with `C-g'."
 (use-package kotlin-mode)
 
 (use-package libgit
-  :if (memq window-system '(mac ns x)))
+  :if (memq window-system '(mac ns x))
+  :config
+  (libgit-load))
 
 (use-package lsp-mode
   :defer t
@@ -249,7 +251,8 @@ abort completely with `C-g'."
   :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
   :ensure-system-package markdown)
 
-(use-package magit)
+(use-package magit
+  :after libgit)
 
 (use-package midnight
   :config
