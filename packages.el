@@ -237,6 +237,11 @@ abort completely with `C-g'."
 
 (use-package kotlin-mode)
 
+(use-package kubernetes
+  :ensure t
+  :ensure-system-package kubectl
+  :commands (kubernetes-overview))
+
 (use-package libgit
   :if (memq window-system '(mac ns x))
   :config
