@@ -254,7 +254,9 @@ abort completely with `C-g'."
 
 (use-package markdown-mode
   :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
-  :ensure-system-package markdown)
+  :ensure-system-package markdown
+  :config
+  (setq markdown-open-command (executable-find "markdown")))
 
 (use-package magit
   :after libgit)
