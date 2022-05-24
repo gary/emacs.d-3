@@ -23,7 +23,7 @@
      ("M-p" . previous-line)
      ("M-n" . next-line)
      ("M-y" . yank-pop)
-     ("M-." . term-send-raw-meta)) t))
+     ("M-." . term-send-raw-meta)) nil nil "Customized with use-package multi-term"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
