@@ -191,9 +191,11 @@
 (defun init-display ()
   (if (not (daemonp))
       (progn
+        (add-hook 'emacs-startup-hook #'turn-off-menu-bar)
         (add-hook 'emacs-startup-hook #'turn-off-tool-bar)
         (add-hook 'emacs-startup-hook '(lambda () (set-font-for-host (selected-frame))))
         (add-hook 'emacs-startup-hook '(lambda () (init-layout (selected-frame))))))
+  (add-hook 'before-make-frame-hook #'turn-off-menu-bar)
   (add-hook 'before-make-frame-hook #'turn-off-tool-bar)
   (add-hook 'after-make-frame-functions #'init-layout)
   (add-hook 'after-make-frame-functions #'set-font-for-host))
@@ -261,6 +263,9 @@
           (set-window-buffer (next-window) next-win-buffer)
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
+
+(defun turn-off-menu-bar ()
+  (if (functionp 'menu-bar-mode) (menu-bar-mode -1)))
 
 (defun turn-off-tool-bar ()
   (if (functionp 'tool-bar-mode) (tool-bar-mode -1)))
