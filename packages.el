@@ -51,6 +51,10 @@
   :config
   (setq diff-switches "-u"))
 
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
+
 (use-package dockerfile-mode
   :config
   (put 'dockerfile-image-name 'safe-local-varible #'stringp))
