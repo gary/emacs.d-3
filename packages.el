@@ -143,6 +143,8 @@
 
 (use-package gitignore-mode :defer t)
 
+(use-package graphql-mode)
+
 (use-package groovy-mode)
 
 (use-package harvest
