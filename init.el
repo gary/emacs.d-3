@@ -129,7 +129,8 @@
 
 (setq inhibit-startup-message t
       initial-scratch-message nil
-      split-height-threshold nil) ; force vertical split
+      split-height-threshold nil ; force vertical split
+      switch-to-buffer-obey-display-actions t)
 
 ;; character encoding
 (prefer-coding-system 'utf-8)

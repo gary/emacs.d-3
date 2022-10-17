@@ -40,12 +40,19 @@
 (use-package coffee-mode)
 
 (use-package dictionary
+  :ensure-system-package dictd
   :init
-  (bind-keys :prefix-map my-dictionary-prefix-map
+  (bind-keys ("M-#" . dictionary-lookup-definition)
+             :prefix-map my-dictionary-prefix-map
              :prefix "C-c C-w"
-             ("l" . dictionary-lookup-definition)
              ("m" . dictionary-match-words)
-             ("s" . dictionary-search)))
+             ("s" . dictionary-search))
+  :config
+  (add-to-list 'display-buffer-alist
+               '("^\\*Dictionary\\*" display-buffer-at-bottom
+                 (window-height . 50)))
+  (setq dictionary-server "localhost"
+        dictionary-use-single-buffer t))
 
 (use-package diff
   :config
