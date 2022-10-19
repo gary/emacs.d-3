@@ -465,6 +465,12 @@ abort completely with `C-g'."
   (define-key (current-global-map) [remap shell-command]
     'with-editor-shell-command))
 
+(use-package vterm
+  :init
+  (setq vterm-module-cmake-args "-DUSE_SYSTEM_LIBVTERM=no")
+  :ensure t
+  :ensure-system-package (libtool-bin libvterm-dev))
+
 (use-package yagist
   :requires kaesar
   :init
