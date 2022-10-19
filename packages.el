@@ -465,6 +465,10 @@ abort completely with `C-g'."
   (define-key (current-global-map) [remap shell-command]
     'with-editor-shell-command))
 
+(use-package vterm
+  :ensure t
+  :ensure-system-package (libtool-bin libvterm-dev))
+
 (use-package yagist
   :requires kaesar
   :init
