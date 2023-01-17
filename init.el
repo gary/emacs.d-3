@@ -192,6 +192,11 @@
   (with-selected-frame frame
     (set-frame-position frame 2500 0)))
 
+(if (>= emacs-major-version 29)
+    (defun linum-mode ()
+      (interactive)
+      (message "display-line-numbers-mode")))
+
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
