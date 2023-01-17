@@ -206,6 +206,11 @@
   (with-selected-frame frame
     (set-frame-position frame 2500 0)))
 
+(if (>= emacs-major-version 29)
+    (defun linum-mode ()
+      (interactive)
+      (message "display-line-numbers-mode")))
+
 (defun opacity-modify (&optional dec)
   "Modify the transparency of the emacs frame; if DEC is t,
     decrease the transparency, otherwise increase it in 10%-steps"
