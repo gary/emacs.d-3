@@ -66,9 +66,7 @@
 (delight '((abbrev-mode nil "abbrev")
            (visual-line-mode nil "simple")))
 
-(bind-keys ((kbd "<f5>") . increase-opacity)
-           ((kbd "<f6>") . decrease-opacity)
-           ("<C-SPC>"    . hippie-expand)
+(bind-keys ("<C-SPC>"    . hippie-expand)
            ("<C-return>" . set-mark-command)
            ("<C-tab>"    . bury-buffer)
            ("C-+"        . text-scale-decrease)
@@ -178,14 +176,6 @@
 (delete-selection-mode t) ; replace selection by typing
 (icomplete-mode 1)        ; incremental minibuffer completion
 
-(defun decrease-opacity ()
-  (interactive)
-  (opacity-modify))
-
-(defun increase-opacity ()
-  (interactive)
-  (opacity-modify t))
-
 (defun init-display ()
   (if (not (daemonp))
       (progn
@@ -201,15 +191,6 @@
 (defun init-layout (frame)
   (with-selected-frame frame
     (set-frame-position frame 2500 0)))
-
-(defun opacity-modify (&optional dec)
-  "Modify the transparency of the emacs frame; if DEC is t,
-    decrease the transparency, otherwise increase it in 10%-steps"
-  (let* ((alpha-or-nil (frame-parameter nil 'alpha)) ; nil before setting
-         (oldalpha (if alpha-or-nil alpha-or-nil 100))
-         (newalpha (if dec (- oldalpha 10) (+ oldalpha 10))))
-    (when (and (>= newalpha frame-alpha-lower-limit) (<= newalpha 100))
-      (modify-frame-parameters nil (list (cons 'alpha newalpha))))))
 
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
