@@ -66,29 +66,29 @@
 (delight '((abbrev-mode nil "abbrev")
            (visual-line-mode nil "simple")))
 
-(bind-keys ((kbd "<f5>") . increase-opacity)
-           ((kbd "<f6>") . decrease-opacity)
-           ("<C-SPC>"    . hippie-expand)
-           ("<C-return>" . set-mark-command)
-           ("<C-tab>"    . bury-buffer)
-           ("C-+"        . text-scale-decrease)
-           ("C-="        . text-scale-increase)
-           ("C-M-z"      . zap-to-char)
-           ("C-w"        . backward-kill-word)
-           ("C-x \\"     . align-regexp)
-           ("M-`"        . other-frame)
-           ("M-z"        . zap-up-to-char)
-           :map ctl-x-4-map
-           ("t" 'toggle-window-split)
-           :map mode-specific-map ; \C-c
-           ("<tab>" . indent-relative)
-           ("k"     . kill-region)
-           ("C-u"   . browse-url-at-point)
-           ("^"     . top-level)
-           ("j"     . delete-indentation)
-           ("r"     . revert-buffer)
-           :map prog-mode-map
-           ("<C-backspace>" . delete-pair))
+(bind-keys ; ((kbd "<f5>") . increase-opacity) FIXME:
+                                        ; ((kbd "<f6>") . decrease-opacity)
+ ("<C-SPC>"    . hippie-expand)
+ ("<C-return>" . set-mark-command)
+ ("<C-tab>"    . bury-buffer)
+ ("C-+"        . text-scale-decrease)
+ ("C-="        . text-scale-increase)
+ ("C-M-z"      . zap-to-char)
+ ("C-w"        . backward-kill-word)
+ ("C-x \\"     . align-regexp)
+ ("M-`"        . other-frame)
+ ("M-z"        . zap-up-to-char)
+ :map ctl-x-4-map
+ ("t" 'toggle-window-split)
+ :map mode-specific-map ; \C-c
+ ("<tab>" . indent-relative)
+ ("k"     . kill-region)
+ ("C-u"   . browse-url-at-point)
+ ("^"     . top-level)
+ ("j"     . delete-indentation)
+ ("r"     . revert-buffer)
+ :map prog-mode-map
+ ("<C-backspace>" . delete-pair))
 
 ;; remappings
 (define-key (current-global-map) [remap isearch-backward-regexp]
