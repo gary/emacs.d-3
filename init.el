@@ -152,6 +152,7 @@
       nsm-settings-file (concat var-directory "network-security.data")
       save-place-file (concat var-directory "places")
       version-control t)
+(startup-redirect-eln-cache (concat var-directory "eln-cache"))
 (load custom-file)
 
 ;; miscellaneous
