@@ -21,7 +21,7 @@
              '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+;; (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
 
 (eval-and-compile
@@ -155,6 +155,7 @@
       nsm-settings-file (concat var-directory "network-security.data")
       save-place-file (concat var-directory "places")
       version-control t)
+(startup-redirect-eln-cache (concat var-directory "eln-cache"))
 (load custom-file)
 
 ;; miscellaneous
