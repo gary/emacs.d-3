@@ -170,7 +170,10 @@
   :bind ("C-x M-f" . ido-find-file-other-window)
   :config
   (define-key (current-global-map) [remap find-file-other-window]
-    'ido-find-file-other-window)
+              'ido-find-file-other-window)
+  (if (>= emacs-major-version 29)
+      (keymap-set ido-file-completion-map "C-k" #'ido-delete-file-at-head))
+
 
   (ido-mode t)
   (ido-everywhere 1)
