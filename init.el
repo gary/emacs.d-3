@@ -87,6 +87,7 @@
            ("r"     . revert-buffer)
            :map prog-mode-map
            ("<C-backspace>" . delete-pair))
+(find-function-setup-keys)
 
 ;; remappings
 (define-key (current-global-map) [remap isearch-backward-regexp]
