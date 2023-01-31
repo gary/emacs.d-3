@@ -102,9 +102,10 @@
                   (window-system . x))))
 
 (use-package enh-ruby-mode
-  :interpreter "ruby"
-  :mode (("\\(\.?\\)Brewfile" . enh-ruby-mode)
-         ("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode)))
+  :init
+  (add-to-list 'major-mode-remap-alist
+               '(ruby-mode . enh-ruby-mode))
+  :interpreter "ruby")
 
 (use-package exec-path-from-shell
   :demand t
