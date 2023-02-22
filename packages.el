@@ -424,6 +424,7 @@ abort completely with `C-g'."
   :after magit)
 
 (use-package switch-window
+  :disabled
   :defer t
   :init
   (define-key (current-global-map) [remap other-window] 'switch-window))
