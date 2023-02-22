@@ -425,7 +425,10 @@ abort completely with `C-g'."
 (use-package switch-window
   :defer t
   :init
-  (define-key (current-global-map) [remap other-window] 'switch-window))
+  (define-key (current-global-map) [remap other-window] 'switch-window)
+  :config
+  (setq-default switch-window-shortcut-style 'qwerty)
+  (setq-default switch-window-timeout nil))
 
 (use-package tramp
   :config
