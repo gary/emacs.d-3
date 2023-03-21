@@ -127,6 +127,7 @@
 (setq inhibit-startup-message t
       initial-scratch-message nil
       split-height-threshold nil) ; force vertical split
+(load-theme 'leuven-dark)
 
 ;; character encoding
 (prefer-coding-system 'utf-8)

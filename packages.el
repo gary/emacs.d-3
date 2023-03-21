@@ -403,6 +403,7 @@ abort completely with `C-g'."
   (setq save-place-file (concat var-directory "places")))
 
 (use-package solarized-theme
+  :disabled
   :init
   (setq solarized-distinct-fringe-background t
         solarized-high-contrast-mode-line t)
@@ -474,6 +475,8 @@ abort completely with `C-g'."
 (use-package vterm
   :init
   (setq vterm-module-cmake-args "-DUSE_SYSTEM_LIBVTERM=no")
+  :custom-face
+  (term-color-blue ((t (:background "DeepSkyBlue3" :foreground "DeepSkyBlue3"))))
   :ensure t
   :ensure-system-package (libtool-bin libvterm-dev))
 
