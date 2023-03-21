@@ -408,7 +408,7 @@ abort completely with `C-g'."
   (setq solarized-distinct-fringe-background t
         solarized-high-contrast-mode-line t)
   :config
-  (load-theme 'solarized-dark t))
+  (load-theme 'leuven-dark t))
 
 (use-package smex
   :bind (("C-x C-m" . smex)
