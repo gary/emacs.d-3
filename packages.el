@@ -491,6 +491,8 @@ abort completely with `C-g'."
   :delight
   :hook enh-ruby-mode)
 
+(use-package x509-mode)
+
 (use-package xkcd
   :config
   (setq xkcd-cache-dir    (concat var-directory "xkcd/")
