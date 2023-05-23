@@ -69,8 +69,6 @@
 (bind-keys ("<C-SPC>"    . hippie-expand)
            ("<C-return>" . set-mark-command)
            ("<C-tab>"    . bury-buffer)
-           ("C-+"        . text-scale-decrease)
-           ("C-="        . text-scale-increase)
            ("C-M-z"      . zap-to-char)
            ("C-w"        . backward-kill-word)
            ("C-x \\"     . align-regexp)
