@@ -44,10 +44,15 @@
 (use-package dictionary
   :init
   (bind-keys :prefix-map my-dictionary-prefix-map
-             :prefix "C-c C-w"
+             :prefix "C-c C-d"
              ("l" . dictionary-lookup-definition)
              ("m" . dictionary-match-words)
-             ("s" . dictionary-search)))
+             ("s" . dictionary-search))
+  :config
+  (add-to-list 'display-buffer-alist
+               '("^\\*Dictionary\\*" display-buffer-in-side-window
+                 (side . bottom)))
+  (setq dictionary-server "localhost"))
 
 (use-package diff
   :config
