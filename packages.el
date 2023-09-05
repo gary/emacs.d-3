@@ -246,8 +246,7 @@ abort completely with `C-g'."
 
 (use-package js2-mode
   :ensure-system-package node
-  :interpreter "node"
-  :mode "\\.js\\'")
+  :interpreter "node")
 
 (use-package kaesar)
 
