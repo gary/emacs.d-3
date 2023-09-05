@@ -469,6 +469,8 @@ abort completely with `C-g'."
   (define-key (current-global-map) [remap shell-command]
     'with-editor-shell-command))
 
+(use-package vue-mode)
+
 (use-package vterm
   :ensure t
   :ensure-system-package (libtool-bin libvterm-dev))
