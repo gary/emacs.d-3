@@ -439,6 +439,8 @@ abort completely with `C-g'."
         transient-values-file (concat var-directory "transient/values.el")
         transient-levels-file (concat var-directory "transient/levels.el")))
 
+(use-package typescript-mode)
+
 (use-package web-mode
   :config
   (setq web-mode-engines-alist '(("erb" . "\\.erb\\'")))
