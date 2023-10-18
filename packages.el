@@ -41,6 +41,10 @@
 
 (use-package coffee-mode)
 
+(use-package dtrt-indent
+  :custom
+  (dtrt-indent-global-mode t))
+
 (use-package dictionary
   :init
   (bind-keys :prefix-map my-dictionary-prefix-map
