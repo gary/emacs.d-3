@@ -193,6 +193,7 @@
     (set-frame-position frame 2500 0)))
 
 (if (>= emacs-major-version 29)
+    ; (defadvice line-number-mode) ; -> display-line-numbers-mode & add nag
     (defun linum-mode ()
       (interactive)
       (message "display-line-numbers-mode")))
