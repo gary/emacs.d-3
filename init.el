@@ -144,6 +144,7 @@
       backup-directory-alist `((".*" . ,tmp-directory))
       custom-file my-custom-file
       delete-old-versions t
+      dired-clean-confirm-killing-deleted-buffers nil
       emacs-lock-default-locking-mode 'kill
       kept-new-versions 16
       kept-old-versions 2
