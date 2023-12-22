@@ -284,7 +284,6 @@ abort completely with `C-g'."
 (use-package midnight
   :config
   (add-to-list 'clean-buffer-list-kill-never-buffer-names "*msg*")
-  (add-to-list 'clean-buffer-list-kill-never-regexps "^\\*shell-")
   (append clean-buffer-list-kill-buffer-names '("*Shell Command Output*"
                                                 "*Completions*"
                                                 "*Occur*"
@@ -292,9 +291,6 @@ abort completely with `C-g'."
                                                 "*Ediff Registry*"
                                                 "*ag search"
                                                 "*markdown-output*"))
-  (add-to-list 'clean-buffer-list-kill-regexps "\\.el\\'")
-  (add-to-list 'clean-buffer-list-kill-regexps "\\.js\\'")
-  (add-to-list 'clean-buffer-list-kill-regexps "\\.rb\\'")
   (midnight-delay-set 'midnight-delay 4400))
 
 (use-package multi-term
