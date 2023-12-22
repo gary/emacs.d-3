@@ -354,6 +354,10 @@ abort completely with `C-g'."
 (use-package powershell
   :if (memq window-system '(pc w32)))
 
+(use-package proced
+  :config
+  (setq proced-enable-color-flag t))
+
 (use-package projectile
   :requires ivy
   :delight '(:eval (concat " " (projectile-project-name)))
