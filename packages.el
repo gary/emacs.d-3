@@ -41,6 +41,11 @@
 
 (use-package coffee-mode)
 
+(use-package company
+  :config
+  (global-company-mode)
+  :delight)
+
 (use-package dtrt-indent
   :custom
   (dtrt-indent-global-mode t)
@@ -270,7 +275,9 @@ abort completely with `C-g'."
 (use-package lsp-mode
   :defer t
   :init
-  (setq lsp-session-file (concat var-directory "lsp-session-v1")))
+  (setq lsp-session-file (concat var-directory "lsp-session-v1"))
+  :config
+  (add-hook 'ruby-ts-mode-hook #'lsp))
 
 (use-package markdown-mode
   :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
