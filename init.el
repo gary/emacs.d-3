@@ -34,8 +34,7 @@
 (defconst var-directory
   (emacs-path "var/"))
 
-(let ((default-directory (emacs-path "lisp")))
-  (normal-top-level-add-subdirs-to-load-path))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (eval-when-compile
   (require 'use-package))
@@ -285,6 +284,11 @@ Goes backward if ARG is negative; error if CHAR not found."
                         (point)))))
 
 (load (emacs-path "packages"))
+
+(when (and (require 'treesit nil t)
+           (fboundp 'treesit-available-p)
+           (treesit-available-p))
+  (require 'init-treesitter))
 
 (init-display)
 ;;; init.el ends here
