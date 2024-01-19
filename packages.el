@@ -351,8 +351,7 @@ abort completely with `C-g'."
   :defer t
   :delight
   :init
-  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
-  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode))
 
 (use-package powershell
   :if (memq window-system '(pc w32)))
