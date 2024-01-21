@@ -376,7 +376,7 @@ abort completely with `C-g'."
 
 (use-package rbenv
   :init
-  (add-hook 'enh-ruby-mode-hook #'rbenv-use-corresponding)
+  (add-hook 'ruby-ts-mode-hook #'rbenv-use-corresponding)
   :config
   (global-rbenv-mode))
 
@@ -388,7 +388,7 @@ abort completely with `C-g'."
 (use-package rspec-mode
   :after yasnippet
   :delight
-  :hook enh-ruby-mode
+  :hook ruby-ts-mode
   :config
   (defadvice rspec-compile (around rspec-compile-around)
     "Use BASH shell for running the specs because of ZSH issues."
@@ -401,7 +401,7 @@ abort completely with `C-g'."
 (use-package rubocop
   :delight
   :init
-  (add-hook 'enh-ruby-mode-hook #'rubocop-mode))
+  (add-hook 'ruby-ts-mode-hook #'rubocop-mode))
 
 (use-package rustic
   :requires lsp-mode)
@@ -517,7 +517,7 @@ abort completely with `C-g'."
 
 (use-package yard-mode
   :delight
-  :hook enh-ruby-mode)
+  :hook ruby-ts-mode)
 
 (use-package x509-mode)
 
