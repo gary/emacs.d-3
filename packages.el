@@ -265,11 +265,6 @@ abort completely with `C-g'."
   :ensure-system-package kubectl
   :commands (kubernetes-overview))
 
-(use-package libgit
-  :if (memq window-system '(mac ns x))
-  :config
-  (libgit-load))
-
 (use-package lsp-mode
   :defer t
   :init
