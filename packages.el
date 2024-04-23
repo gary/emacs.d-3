@@ -154,9 +154,7 @@
   :init
   (setq forge-database-file (concat var-directory "forge-database.sqlite")))
 
-(use-package gitconfig-mode :defer t)
-
-(use-package gitignore-mode :defer t)
+(use-package git-modes)
 
 (use-package graphql-mode)
 
