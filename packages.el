@@ -41,6 +41,16 @@
 
 (use-package coffee-mode)
 
+(use-package company
+  :config
+  (global-company-mode)
+  :delight)
+
+(use-package dtrt-indent
+  :custom
+  (dtrt-indent-global-mode t)
+  :delight)
+
 (use-package dictionary
   :init
   (bind-keys :prefix-map my-dictionary-prefix-map
@@ -102,9 +112,7 @@
                   (window-system . x))))
 
 (use-package enh-ruby-mode
-  :interpreter "ruby"
-  :mode (("\\(\.?\\)Brewfile" . enh-ruby-mode)
-         ("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode)))
+  :interpreter "ruby")
 
 (use-package exec-path-from-shell
   :demand t
@@ -146,9 +154,7 @@
   :init
   (setq forge-database-file (concat var-directory "forge-database.sqlite")))
 
-(use-package gitconfig-mode :defer t)
-
-(use-package gitignore-mode :defer t)
+(use-package git-modes)
 
 (use-package graphql-mode)
 
@@ -170,7 +176,10 @@
   :bind ("C-x M-f" . ido-find-file-other-window)
   :config
   (define-key (current-global-map) [remap find-file-other-window]
-    'ido-find-file-other-window)
+              'ido-find-file-other-window)
+  (if (>= emacs-major-version 29)
+      (keymap-set ido-file-completion-map "C-k" #'ido-delete-file-at-head))
+
 
   (ido-mode t)
   (ido-everywhere 1)
@@ -243,8 +252,7 @@ abort completely with `C-g'."
 
 (use-package js2-mode
   :ensure-system-package node
-  :interpreter "node"
-  :mode "\\.js\\'")
+  :interpreter "node")
 
 (use-package kaesar)
 
@@ -255,15 +263,12 @@ abort completely with `C-g'."
   :ensure-system-package kubectl
   :commands (kubernetes-overview))
 
-(use-package libgit
-  :if (memq window-system '(mac ns x))
-  :config
-  (libgit-load))
-
 (use-package lsp-mode
   :defer t
   :init
-  (setq lsp-session-file (concat var-directory "lsp-session-v1")))
+  (setq lsp-session-file (concat var-directory "lsp-session-v1"))
+  :config
+  (add-hook 'ruby-ts-mode-hook #'lsp))
 
 (use-package markdown-mode
   :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
@@ -277,7 +282,6 @@ abort completely with `C-g'."
 (use-package midnight
   :config
   (add-to-list 'clean-buffer-list-kill-never-buffer-names "*msg*")
-  (add-to-list 'clean-buffer-list-kill-never-regexps "^\\*shell-")
   (append clean-buffer-list-kill-buffer-names '("*Shell Command Output*"
                                                 "*Completions*"
                                                 "*Occur*"
@@ -285,9 +289,6 @@ abort completely with `C-g'."
                                                 "*Ediff Registry*"
                                                 "*ag search"
                                                 "*markdown-output*"))
-  (add-to-list 'clean-buffer-list-kill-regexps "\\.el\\'")
-  (add-to-list 'clean-buffer-list-kill-regexps "\\.js\\'")
-  (add-to-list 'clean-buffer-list-kill-regexps "\\.rb\\'")
   (midnight-delay-set 'midnight-delay 4400))
 
 (use-package multi-term
@@ -341,11 +342,14 @@ abort completely with `C-g'."
   :defer t
   :delight
   :init
-  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
-  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode))
 
 (use-package powershell
   :if (memq window-system '(pc w32)))
+
+(use-package proced
+  :config
+  (setq proced-enable-color-flag t))
 
 (use-package projectile
   :requires ivy
@@ -365,7 +369,7 @@ abort completely with `C-g'."
 
 (use-package rbenv
   :init
-  (add-hook 'enh-ruby-mode-hook #'rbenv-use-corresponding)
+  (add-hook 'ruby-ts-mode-hook #'rbenv-use-corresponding)
   :config
   (global-rbenv-mode))
 
@@ -377,7 +381,7 @@ abort completely with `C-g'."
 (use-package rspec-mode
   :after yasnippet
   :delight
-  :hook enh-ruby-mode
+  :hook ruby-ts-mode
   :config
   (defadvice rspec-compile (around rspec-compile-around)
     "Use BASH shell for running the specs because of ZSH issues."
@@ -390,7 +394,7 @@ abort completely with `C-g'."
 (use-package rubocop
   :delight
   :init
-  (add-hook 'enh-ruby-mode-hook #'rubocop-mode))
+  (add-hook 'ruby-ts-mode-hook #'rubocop-mode))
 
 (use-package rustic
   :requires lsp-mode)
@@ -400,6 +404,7 @@ abort completely with `C-g'."
   (setq save-place-file (concat var-directory "places")))
 
 (use-package solarized-theme
+  :disabled
   :init
   (setq solarized-distinct-fringe-background t
         solarized-high-contrast-mode-line t)
@@ -422,7 +427,10 @@ abort completely with `C-g'."
 (use-package switch-window
   :defer t
   :init
-  (define-key (current-global-map) [remap other-window] 'switch-window))
+  (define-key (current-global-map) [remap other-window] 'switch-window)
+  :config
+  (setq-default switch-window-shortcut-style 'qwerty)
+  (setq-default switch-window-timeout nil))
 
 (use-package tramp
   :config
@@ -465,6 +473,14 @@ abort completely with `C-g'."
   (define-key (current-global-map) [remap shell-command]
     'with-editor-shell-command))
 
+(use-package vterm
+  :init
+  (setq vterm-module-cmake-args "-DUSE_SYSTEM_LIBVTERM=no")
+  :custom-face
+  (term-color-blue ((t (:background "DeepSkyBlue3" :foreground "DeepSkyBlue3"))))
+  :ensure t
+  :ensure-system-package (libtool-bin libvterm-dev))
+
 (use-package yagist
   :requires kaesar
   :init
@@ -494,7 +510,7 @@ abort completely with `C-g'."
 
 (use-package yard-mode
   :delight
-  :hook enh-ruby-mode)
+  :hook ruby-ts-mode)
 
 (use-package x509-mode)
 

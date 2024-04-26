@@ -16,7 +16,7 @@
 
 (require 'package)
 
-(setq package-enable-at-startup nil)
+(setq package-install-upgrade-built-in t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
@@ -35,8 +35,7 @@
 (defconst var-directory
   (emacs-path "var/"))
 
-(let ((default-directory (emacs-path "lisp")))
-  (normal-top-level-add-subdirs-to-load-path))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (eval-when-compile
   (require 'use-package))
@@ -66,13 +65,9 @@
 (delight '((abbrev-mode nil "abbrev")
            (visual-line-mode nil "simple")))
 
-(bind-keys ((kbd "<f5>") . increase-opacity)
-           ((kbd "<f6>") . decrease-opacity)
-           ("<C-SPC>"    . hippie-expand)
+(bind-keys ("<C-SPC>"    . hippie-expand)
            ("<C-return>" . set-mark-command)
            ("<C-tab>"    . bury-buffer)
-           ("C-+"        . text-scale-decrease)
-           ("C-="        . text-scale-increase)
            ("C-M-z"      . zap-to-char)
            ("C-w"        . backward-kill-word)
            ("C-x \\"     . align-regexp)
@@ -89,6 +84,7 @@
            ("r"     . revert-buffer)
            :map prog-mode-map
            ("<C-backspace>" . delete-pair))
+(find-function-setup-keys)
 
 ;; remappings
 (define-key (current-global-map) [remap isearch-backward-regexp]
@@ -128,6 +124,7 @@
 (setq inhibit-startup-message t
       initial-scratch-message nil
       split-height-threshold nil) ; force vertical split
+(load-theme 'leuven-dark)
 
 ;; character encoding
 (prefer-coding-system 'utf-8)
@@ -146,6 +143,7 @@
       backup-directory-alist `((".*" . ,tmp-directory))
       custom-file my-custom-file
       delete-old-versions t
+      dired-clean-confirm-killing-deleted-buffers nil
       emacs-lock-default-locking-mode 'kill
       kept-new-versions 16
       kept-old-versions 2
@@ -163,7 +161,8 @@
 (put 'eval-expression  'disabled nil) ; allow eval commands
 (set-default 'indent-tabs-mode nil)
 (setq-default abbrev-mode t)
-(setq browse-url-browser-function 'browse-url-default-browser
+(setq async-shell-command-buffer 'rename-buffer
+      browse-url-browser-function 'browse-url-default-browser
       mac-command-modifier 'meta ; command is alt in osx
       mac-option-modifier 'alt
       mouse-yank-at-point t
@@ -177,14 +176,6 @@
       yank-pop-change-selection t)
 (delete-selection-mode t) ; replace selection by typing
 (icomplete-mode 1)        ; incremental minibuffer completion
-
-(defun decrease-opacity ()
-  (interactive)
-  (opacity-modify))
-
-(defun increase-opacity ()
-  (interactive)
-  (opacity-modify t))
 
 (defun init-display ()
   (if (not (daemonp))
@@ -202,14 +193,11 @@
   (with-selected-frame frame
     (set-frame-position frame 2500 0)))
 
-(defun opacity-modify (&optional dec)
-  "Modify the transparency of the emacs frame; if DEC is t,
-    decrease the transparency, otherwise increase it in 10%-steps"
-  (let* ((alpha-or-nil (frame-parameter nil 'alpha)) ; nil before setting
-         (oldalpha (if alpha-or-nil alpha-or-nil 100))
-         (newalpha (if dec (- oldalpha 10) (+ oldalpha 10))))
-    (when (and (>= newalpha frame-alpha-lower-limit) (<= newalpha 100))
-      (modify-frame-parameters nil (list (cons 'alpha newalpha))))))
+(if (>= emacs-major-version 29)
+    ; (defadvice line-number-mode) ; -> display-line-numbers-mode & add nag
+    (defun linum-mode ()
+      (interactive)
+      (message "display-line-numbers-mode")))
 
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
@@ -298,6 +286,11 @@ Goes backward if ARG is negative; error if CHAR not found."
                         (point)))))
 
 (load (emacs-path "packages"))
+
+(when (and (require 'treesit nil t)
+           (fboundp 'treesit-available-p)
+           (treesit-available-p))
+  (require 'init-treesitter))
 
 (init-display)
 ;;; init.el ends here

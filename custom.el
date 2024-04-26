@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(x509-mode cmake-mode vterm graphql-mode docker kubernetes libgit lsp-mode forge ox-jira dockerfile-mode edit-server groovy-mode json-reformat json-snatcher json-mode kotlin-mode ssh-agency ripgrep powershell coffee-mode hydra harvest ivy dumb-jump xkcd yard-mode yasnippet yaml-mode yagist wgrep-ag web-mode switch-window smex solarized-theme rubocop rspec-mode rbenv projectile paredit multi-term magithub markdown-mode kaesar js2-mode ido-completing-read+ gitignore-mode gitconfig-mode flx-ido flycheck-pos-tip flycheck feature-mode exec-path-from-shell enh-ruby-mode dictionary browse-kill-ring auto-package-update aggressive-indent ag use-package-ensure-system-package delight))
+   '(dtrt-indent vterm x509-mode cmake-mode graphql-mode docker kubernetes lsp-mode forge ox-jira dockerfile-mode edit-server groovy-mode json-reformat json-snatcher json-mode kotlin-mode ssh-agency ripgrep powershell coffee-mode hydra harvest ivy dumb-jump xkcd yard-mode yasnippet yaml-mode yagist wgrep-ag web-mode switch-window smex solarized-theme rubocop rspec-mode rbenv projectile paredit multi-term magithub markdown-mode kaesar js2-mode ido-completing-read+ git-modes flx-ido flycheck-pos-tip flycheck feature-mode exec-path-from-shell enh-ruby-mode dictionary browse-kill-ring auto-package-update aggressive-indent ag use-package-ensure-system-package delight))
  '(projectile-completion-system 'ivy)
  '(term-bind-key-alist
    '(("C-a" . term-bol)
@@ -29,6 +29,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "DeepPink1" :foreground "DeepPink4" :inverse-video t)))))
+ '(cursor ((t (:background "DeepPink1" :foreground "DeepPink4" :inverse-video t))))
+ '(term-color-blue ((t (:background "DeepSkyBlue3" :foreground "DeepSkyBlue3")))))
 
 (provide 'my-custom)
