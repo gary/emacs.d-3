@@ -26,9 +26,6 @@
   (define-inline emacs-path (path)
     (expand-file-name path user-emacs-directory)))
 
-(defconst my-custom-file
-  (emacs-path "custom.el"))
-
 (defconst tmp-directory
   (concat temporary-file-directory "/org.gnu.emacs"))
 
@@ -106,6 +103,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; appearance
+(add-to-list 'default-frame-alist '(cursor-color . "DeepPink1"))
 (add-to-list 'default-frame-alist '(width . 173))
 (add-to-list 'default-frame-alist '(height . 81))
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
@@ -135,13 +133,16 @@
 (set-terminal-coding-system 'utf-8)
 (setq coding-system-for-write 'utf-8)
 
+;; faces
+(set-cursor-color "DeepPink1")
+
 ;; file management
 (setq abbrev-file-name (concat var-directory "abbrev_defs")
       auto-save-file-name-transforms `((".*" ,tmp-directory t))
       auto-save-list-file-prefix tmp-directory
       backup-by-copying-when-linked t
       backup-directory-alist `((".*" . ,tmp-directory))
-      custom-file my-custom-file
+      custom-file "custom.el"
       delete-old-versions t
       dired-clean-confirm-killing-deleted-buffers nil
       emacs-lock-default-locking-mode 'kill
@@ -150,7 +151,6 @@
       nsm-settings-file (concat var-directory "network-security.data")
       save-place-file (concat var-directory "places")
       version-control t)
-(load custom-file)
 
 ;; miscellaneous
 (add-to-list 'safe-local-variable-values '(lexical-binding . t))
