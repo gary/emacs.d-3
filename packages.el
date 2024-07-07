@@ -481,6 +481,8 @@ abort completely with `C-g'."
   :ensure t
   :ensure-system-package (libtool-bin libvterm-dev))
 
+(use-package vue-mode)
+
 (use-package yagist
   :requires kaesar
   :init
