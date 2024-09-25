@@ -37,6 +37,8 @@
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
 
+(use-package bundler)
+
 (use-package cmake-mode)
 
 (use-package coffee-mode)
