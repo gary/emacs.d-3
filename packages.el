@@ -30,6 +30,8 @@
 (use-package autorevert
   :delight auto-revert-mode)
 
+(use-package bats-mode)
+
 (use-package bookmark
   :config
   (setq bookmark-default-file (concat var-directory "emacs.bmk")))
