@@ -27,6 +27,8 @@
   (define-inline emacs-path (path)
     (expand-file-name path user-emacs-directory)))
 
+(load-theme 'leuven-dark)
+
 (defconst data-directory
   (concat (xdg-data-home) "/emacs")
   "Directory for all portable Emacs data files that persist between restarts.")
@@ -124,7 +126,6 @@
 (setq inhibit-startup-message t
       initial-scratch-message nil
       split-height-threshold nil) ; force vertical split
-(load-theme 'leuven-dark)
 
 ;; character encoding
 (prefer-coding-system 'utf-8)
