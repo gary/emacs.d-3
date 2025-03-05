@@ -220,7 +220,7 @@
                 ns-input-fontsize 16
                 ns-pop-up-frames nil)
           (ns-respond-to-change-font))
-      (set-face-attribute 'default nil :family "Inconsolata" :height 120))))
+      (set-frame-font "Inconsolata 12" nil t))))
 
 (defun toggle-window-split ()
   (interactive)
