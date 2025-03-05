@@ -20,8 +20,6 @@
 
 (use-package auto-package-update
   :disabled
-  :init
-  (setq auto-package-update-last-update-day-filename (concat var-directory "last-package-update-day"))
   :config
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
@@ -32,9 +30,7 @@
 
 (use-package bats-mode)
 
-(use-package bookmark
-  :config
-  (setq bookmark-default-file (concat var-directory "emacs.bmk")))
+(use-package bookmark)
 
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
@@ -154,9 +150,7 @@
 
 (use-package forge
   :if (memq window-system '(mac ns x))
-  :after magit
-  :init
-  (setq forge-database-file (concat var-directory "forge-database.sqlite")))
+  :after magit)
 
 (use-package git-modes)
 
@@ -194,7 +188,6 @@
         ido-enable-flex-matching t
         ido-enable-prefix nil
         ido-max-prospects 10
-        ido-save-directory-list-file (concat var-directory "ido.last")
         ido-use-faces nil
         ido-use-filename-at-point 'guess
         ido-use-virtual-buffers t))
@@ -242,9 +235,7 @@ abort completely with `C-g'."
                      bef aft (if p "loc" "glob")))
         (user-error "No typo at or before point"))))
   :bind (("M-x" . endless/ispell-word-then-abbrev)
-         ("M-^" . ispell-comments-and-strings))
-  :config
-  (setq ispell-personal-dictionary (concat var-directory "ispell_english")))
+         ("M-^" . ispell-comments-and-strings)))
 
 (use-package ivy)  ; TODO: evaluate in full later
 
@@ -269,8 +260,6 @@ abort completely with `C-g'."
 
 (use-package lsp-mode
   :defer t
-  :init
-  (setq lsp-session-file (concat var-directory "lsp-session-v1"))
   :config
   (add-hook 'ruby-ts-mode-hook #'lsp))
 
@@ -358,18 +347,13 @@ abort completely with `C-g'."
 (use-package projectile
   :requires ivy
   :delight '(:eval (concat " " (projectile-project-name)))
-  :init
-  (setq projectile-known-projects-file (concat var-directory "projectile-bookmarks.eld"))
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1)
-  (setq projectile-cache-file (concat var-directory "projectile.cache")
-        projectile-completion-system 'ivy
+  (setq projectile-completion-system 'ivy
         projectile-enable-caching t))
 
-(use-package recentf
-  :config
-  (setq recentf-save-file (concat var-directory "recentf")))
+(use-package recentf)
 
 (use-package rbenv
   :init
@@ -403,9 +387,7 @@ abort completely with `C-g'."
 (use-package rustic
   :requires lsp-mode)
 
-(use-package saveplace
-  :config
-  (setq save-place-file (concat var-directory "places")))
+(use-package saveplace)
 
 (use-package solarized-theme
   :disabled
@@ -418,9 +400,7 @@ abort completely with `C-g'."
 (use-package smex
   :bind (("C-x C-m" . smex)
          :map mode-specific-map
-         ("C-m" . smex-major-mode-commands))
-  :config
-  (setq smex-save-file (concat var-directory "smex-items")))
+         ("C-m" . smex-major-mode-commands)))
 
 (use-package ssh-agency
   :if (memq window-system '(pc w32))
@@ -436,16 +416,10 @@ abort completely with `C-g'."
   (setq-default switch-window-shortcut-style 'qwerty)
   (setq-default switch-window-timeout nil))
 
-(use-package tramp
-  :config
-  (setq tramp-persistency-file-name  (concat var-directory "tramp")))
+(use-package tramp)
 
 (use-package transient
-  :requires magit
-  :config
-  (setq transient-history-file (concat var-directory "transient/history.el")
-        transient-values-file (concat var-directory "transient/values.el")
-        transient-levels-file (concat var-directory "transient/levels.el")))
+  :requires magit)
 
 (use-package web-mode
   :config
@@ -520,10 +494,7 @@ abort completely with `C-g'."
 
 (use-package x509-mode)
 
-(use-package xkcd
-  :config
-  (setq xkcd-cache-dir    (concat var-directory "xkcd/")
-        xkcd-cache-latest (concat xkcd-cache-dir "latest")))
+(use-package xkcd)
 
 (provide 'my-packages)
 ;;; packages.el ends here

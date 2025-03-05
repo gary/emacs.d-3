@@ -9,7 +9,6 @@
 ;;; Code:
 
 (setq package-enable-at-startup nil)
-(startup-redirect-eln-cache (concat user-emacs-directory "var/" "eln-cache"))
 
 (provide 'early-init)
 

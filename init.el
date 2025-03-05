@@ -33,9 +33,6 @@
   (concat (xdg-data-home) "/emacs")
   "Directory for all portable Emacs data files that persist between restarts.")
 
-(defconst var-directory
-  (emacs-path "var/"))
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (eval-when-compile
@@ -140,8 +137,7 @@
 (set-cursor-color "DeepPink1")
 
 ;; file management
-(setq abbrev-file-name (concat var-directory "abbrev_defs")
-      auto-save-file-name-transforms `((".*" ,data-directory t))
+(setq auto-save-file-name-transforms `((".*" ,data-directory t))
       auto-save-list-file-prefix data-directory
       backup-by-copying-when-linked t
       backup-directory-alist `((".*" . ,data-directory))
@@ -151,8 +147,6 @@
       emacs-lock-default-locking-mode 'kill
       kept-new-versions 16
       kept-old-versions 2
-      nsm-settings-file (concat var-directory "network-security.data")
-      save-place-file (concat var-directory "places")
       version-control t)
 
 ;; miscellaneous
