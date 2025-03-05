@@ -15,6 +15,7 @@
 (defconst emacs-start-time (current-time))
 
 (require 'package)
+(require 'xdg)
 
 (setq package-install-upgrade-built-in t)
 (add-to-list 'package-archives
@@ -26,8 +27,9 @@
   (define-inline emacs-path (path)
     (expand-file-name path user-emacs-directory)))
 
-(defconst tmp-directory
-  (concat temporary-file-directory "/org.gnu.emacs"))
+(defconst data-directory
+  (concat (xdg-data-home) "/emacs")
+  "Directory for all portable Emacs data files that persist between restarts.")
 
 (defconst var-directory
   (emacs-path "var/"))
@@ -138,10 +140,10 @@
 
 ;; file management
 (setq abbrev-file-name (concat var-directory "abbrev_defs")
-      auto-save-file-name-transforms `((".*" ,tmp-directory t))
-      auto-save-list-file-prefix tmp-directory
+      auto-save-file-name-transforms `((".*" ,data-directory t))
+      auto-save-list-file-prefix data-directory
       backup-by-copying-when-linked t
-      backup-directory-alist `((".*" . ,tmp-directory))
+      backup-directory-alist `((".*" . ,data-directory))
       custom-file "custom.el"
       delete-old-versions t
       dired-clean-confirm-killing-deleted-buffers nil
