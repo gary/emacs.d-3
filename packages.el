@@ -7,11 +7,6 @@
 
 ;;; Code:
 
-(use-package ag
-  :bind (:map mode-specific-map
-              ("s a" . ag-regexp))
-  :ensure-system-package ag)
-
 (use-package aggressive-indent
   :defer t
   :delight
@@ -361,11 +356,6 @@ abort completely with `C-g'."
   :config
   (global-rbenv-mode))
 
-(use-package ripgrep
-  :bind (:map mode-specific-map
-              ("s r" . ripgrep-regexp))
-  :ensure-system-package rg)
-
 (use-package rspec-mode
   :after yasnippet
   :delight
@@ -425,9 +415,6 @@ abort completely with `C-g'."
   :config
   (setq web-mode-engines-alist '(("erb" . "\\.erb\\'")))
   :mode "\\html?\\'" "\\.erb\\'")
-
-(use-package wgrep-ag
-  :hook (ag-mode-hook . wgrep-ag-setup))
 
 (use-package whitespace
   :delight

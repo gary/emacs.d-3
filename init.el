@@ -284,6 +284,8 @@ Goes backward if ARG is negative; error if CHAR not found."
 
 (load (emacs-path "packages"))
 
+(require 'init-grep)
+
 (when (and (require 'treesit nil t)
            (fboundp 'treesit-available-p)
            (treesit-available-p))
