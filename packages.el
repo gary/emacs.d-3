@@ -30,7 +30,9 @@
 
 (use-package bats-mode)
 
-(use-package bookmark)
+(use-package bookmark
+  :config
+  (setq bookmark-default-file (concat user-emacs-directory "emacs.bmk")))
 
 (use-package browse-kill-ring
   :bind ("M-y" . browse-kill-ring))
