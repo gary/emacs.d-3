@@ -7,11 +7,6 @@
 
 ;;; Code:
 
-(use-package ag
-  :bind (:map mode-specific-map
-              ("s a" . ag-regexp))
-  :ensure-system-package ag)
-
 (use-package aggressive-indent
   :defer t
   :delight
@@ -43,10 +38,15 @@
 
 (use-package coffee-mode)
 
-(use-package company
-  :config
-  (global-company-mode)
-  :delight)
+(use-package consult-eglot)
+
+(use-package corfu
+  :init
+  (global-corfu-mode)
+  (corfu-popupinfo-mode)
+  :custom
+  (corfu-auto t)
+  (corfu-quit-no-match 'separator))
 
 (use-package dtrt-indent
   :custom
@@ -79,6 +79,7 @@
   (put 'dockerfile-image-name 'safe-local-varible #'stringp))
 
 (use-package dumb-jump
+  :disabled
   :requires ivy
   :init
   (bind-keys :prefix-map my-dumb-jump-prefix-map
@@ -88,9 +89,7 @@
              ("i" . dumb-jump-go-prompt)
              ("x" . dumb-jump-go-prefer-external)
              ("z" . dumb-jump-go-prefer-external-other-window))
-  :config
-  (setq dumb-jump-selector 'ivy)
-  :ensure-system-package ag)
+  :ensure-system-package rg)
 
 (use-package ediff
   :config
@@ -112,6 +111,10 @@
                   (minibuffer . t)
                   (menu-bar-lines . t)
                   (window-system . x))))
+
+(use-package eglot
+  :config
+  (add-to-list 'eglot-server-programs '((ruby-mode ruby-ts-mode) "ruby-lsp")))
 
 (use-package enh-ruby-mode
   :interpreter "ruby")
@@ -260,11 +263,6 @@ abort completely with `C-g'."
   :ensure-system-package kubectl
   :commands (kubernetes-overview))
 
-(use-package lsp-mode
-  :defer t
-  :config
-  (add-hook 'ruby-ts-mode-hook #'lsp))
-
 (use-package markdown-mode
   :mode "\\.mdwn\\'" "\\.mdtxt\\'" "\\.mkd\\'" "\\.mkdn\\'"
   :ensure-system-package markdown
@@ -324,6 +322,11 @@ abort completely with `C-g'."
                         ("M-y" . yank-pop)
                         ("M-." . term-send-raw-meta))
   term-unbind-key-list '("C-z" "C-x" "C-c" "C-h" "C-y" "M-y" "<ESC>"))
+
+(use-package orderless
+  :ensure t
+  :config
+  (setopt completion-styles '(orderless basic)))
 
 (use-package org
   :init
@@ -385,9 +388,6 @@ abort completely with `C-g'."
   :delight
   :init
   (add-hook 'ruby-ts-mode-hook #'rubocop-mode))
-
-(use-package rustic
-  :requires lsp-mode)
 
 (use-package saveplace)
 
@@ -452,6 +452,15 @@ abort completely with `C-g'."
     'with-editor-async-shell-command)
   (define-key (current-global-map) [remap shell-command]
     'with-editor-shell-command))
+
+(use-package vertico
+  :custom
+  (vertico-scroll-margin 0) ;; Different scroll margin
+  (vertico-count 20) ;; Show more candidates
+  (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
+  (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
+  :init
+  (vertico-mode))
 
 (use-package vterm
   :init

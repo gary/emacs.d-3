@@ -124,6 +124,12 @@
       initial-scratch-message nil
       split-height-threshold nil) ; force vertical split
 
+;; completion
+(setq completion-category-defaults nil
+      completion-category-overrides nil
+      completion-cycle-threshold 4
+      tab-always-indent 'complete)
+
 ;; character encoding
 (prefer-coding-system 'utf-8)
 (set-clipboard-coding-system 'utf-8)
