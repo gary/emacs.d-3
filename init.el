@@ -147,7 +147,7 @@
       auto-save-list-file-prefix data-directory
       backup-by-copying-when-linked t
       backup-directory-alist `((".*" . ,data-directory))
-      custom-file "custom.el"
+      custom-file (emacs-path "custom.el")
       delete-old-versions t
       dired-clean-confirm-killing-deleted-buffers nil
       emacs-lock-default-locking-mode 'kill
