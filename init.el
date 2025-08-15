@@ -160,6 +160,7 @@
 (if (boundp 'use-short-answers)
     (setq use-short-answers t)
   (fset 'yes-or-no-p 'y-or-n-p))
+(put 'list-timers 'disabled nil) ; FIXME doc-view-display
 (put 'narrow-to-region 'disabled nil) ; narrow enabled
 (put 'narrow-to-page   'disabled nil)
 (put 'upcase-region    'disabled nil) ; change case enabled
