@@ -101,7 +101,6 @@
 (define-key 'help-command "a" 'apropos)
 
 ;; aliases
-(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; appearance
 (add-to-list 'default-frame-alist '(cursor-color . "DeepPink1"))
@@ -158,6 +157,9 @@
 ;; miscellaneous
 (add-to-list 'safe-local-variable-values '(lexical-binding . t))
 (add-to-list 'safe-local-variable-values '(whitespace-line-column . 80))
+(if (boundp 'use-short-answers)
+    (setq use-short-answers t)
+  (fset 'yes-or-no-p 'y-or-n-p))
 (put 'narrow-to-region 'disabled nil) ; narrow enabled
 (put 'narrow-to-page   'disabled nil)
 (put 'upcase-region    'disabled nil) ; change case enabled
