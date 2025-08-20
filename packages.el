@@ -332,7 +332,9 @@ abort completely with `C-g'."
   :init
   :config
   (setq org-directory "~/var/org/"
-        org-agenda-files (file-expand-wildcards (concat org-directory "**/*.org"))))
+        org-agenda-files (file-expand-wildcards (concat org-directory "**/*.org")))
+  (add-to-list 'org-babel-load-languages '(shell . t))
+  (add-to-list 'org-babel-load-languages '(ruby . t)))
 
 (use-package ox-jira)
 
