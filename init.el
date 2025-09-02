@@ -100,6 +100,9 @@
   'query-replace)
 (define-key 'help-command "a" 'apropos)
 
+;;; unmappings
+(unbind-key "C-x m") ; compose-mail
+
 ;; aliases
 
 ;; appearance
